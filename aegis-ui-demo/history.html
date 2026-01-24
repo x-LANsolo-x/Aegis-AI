@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis History | Aegis-AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="history-styles.css">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="nav-brand">
+            <span class="shield-icon">🛡️</span>
+            <span class="brand-text">AEGIS<span class="brand-ai">AI</span></span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Dashboard</a>
+            <a href="history.html" class="nav-link active">Analysis History</a>
+            <a href="reports.html" class="nav-link">Reports</a>
+            <a href="result.html" class="nav-link">Settings</a>
+        </div>
+        <div class="nav-right">
+            <div class="status-badge online">
+                <span class="status-dot"></span>
+                <span>Offline Mode Active</span>
+            </div>
+            <div class="user-avatar">
+                <span>CO</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="history-page">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="header-left">
+                <h1 class="page-title">Analysis History</h1>
+                <p class="page-subtitle">Complete log of all audio verification scans</p>
+            </div>
+            <div class="header-actions">
+                <button class="header-btn">📥 Export All</button>
+                <button class="header-btn">🗑️ Clear History</button>
+                <button class="header-btn primary">🎤 New Analysis</button>
+            </div>
+        </div>
+
+        <!-- Stats Overview -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <span class="stat-number">247</span>
+                <span class="stat-label">Total Scans</span>
+            </div>
+            <div class="stat-item authentic">
+                <span class="stat-number">203</span>
+                <span class="stat-label">Authentic</span>
+            </div>
+            <div class="stat-item threat">
+                <span class="stat-number">44</span>
+                <span class="stat-label">Threats Detected</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">1.18s</span>
+                <span class="stat-label">Avg. Processing</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">82.2%</span>
+                <span class="stat-label">Authentic Rate</span>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters-bar">
+            <div class="filter-group">
+                <label class="filter-label">Status:</label>
+                <select class="filter-select">
+                    <option>All Results</option>
+                    <option>Authentic Only</option>
+                    <option>Threats Only</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label class="filter-label">Date Range:</label>
+                <select class="filter-select">
+                    <option>All Time</option>
+                    <option>Today</option>
+                    <option>Last 7 Days</option>
+                    <option>Last 30 Days</option>
+                    <option>Last 90 Days</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label class="filter-label">Confidence:</label>
+                <select class="filter-select">
+                    <option>Any</option>
+                    <option>90%+</option>
+                    <option>80-90%</option>
+                    <option>Below 80%</option>
+                </select>
+            </div>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Search by filename..." class="search-input">
+            </div>
+        </div>
+
+        <!-- History Table -->
+        <div class="history-table-container">
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th class="th-checkbox"><input type="checkbox"></th>
+                        <th>File Name</th>
+                        <th>Date & Time</th>
+                        <th>Duration</th>
+                        <th>Result</th>
+                        <th>Confidence</th>
+                        <th>Processing</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Today -->
+                    <tr class="date-separator">
+                        <td colspan="8">Today - January 24, 2026</td>
+                    </tr>
+                    <tr class="history-row threat-row">
+                        <td><input type="checkbox"></td>
+                        <td class="cell-file">
+                            <span class="file-icon">🎵</span>
+                            <div class="file-info">
+                                <span class="file-name">urgent_command_audio.wav</span>
+                                <span class="file-meta">847 KB • WAV</span>
+                            </div>
+                        </td>
+                        <td class="cell-date">10:47 AM</td>
+                        <td>00:12</td>
+                        <td><span class="badge threat">🚨 Deepfake</span></td>
+                        <td class="cell-confidence threat">94.7%</td>
+                        <td>1.24s</td>
+                        <td class="cell-actions">
+                            <button class="action-icon" title="View Details">👁️</button>
+                            <button class="action-icon" title="Download Report">📄</button>
+                            <button class="action-icon" title="Delete">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr class="history-row">
+                        <td><input type="checkbox"></td>
+                        <td class="cell-file">
+                            <span class="file-icon">🎵</span>
+                            <div class="file-info">
+                                <span class="file-name">commander_voice_note.wav</span>
+                                <span class="file-meta">523 KB • WAV</span>
+                            </div>
+                        </td>
+                        <td class="cell-date">10:32 AM</td>
+                        <td>00:08</td>
+                        <td><span class="badge authentic">✅ Authentic</span></td>
+                        <td class="cell-confidence authentic">97.2%</td>
+                        <td>0.98s</td>
+                        <td class="cell-actions">
+                            <button class="action-icon" title="View Details">👁️</button>
+                            <button class="action-icon" title="Download Report">📄</button>
+                            <button class="action-icon" title="Delete">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr class="history-row">
+                        <td><input type="checkbox"></td>
+                        <td class="cell-file">
+                            <span class="file-icon">🎵</span>
+                            <div class="file-info">
+                                <span class="file-name">field_report_recording.wav</span>
+                                <span class="file-meta">1.2 MB • WAV</span>
+                            </div>
+                        </td>
+                        <td class="cell-date">09:58 AM</td>
+                        <td>00:23</td>
+                        <td><span class="badge authentic">✅ Authentic</span></td>
+                        <td class="cell-confidence authentic">99.1%</td>
+                        <td>1.45s</td>
+                        <td class="cell-actions">
+                            <button class="action-icon" title="View Details">👁️</button>
+                            <button class="action-icon" title="Download Report">📄</button>
+                            <button class="action-icon" title="Delete">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr class="history-row threat-row">
+                        <td><input type="checkbox"></td>
+                        <td class="cell-file">
+                            <span class="file-icon">🎵</span>
+                            <div class="file-info">
+                                <span class="file-name">suspicious_voicemail.mp3</span>
+                                <span class="file-meta">412 KB • MP3</span>
+                            </div>
+                        </td>
+                        <td class="cell-date">09:15 AM</td>
+                        <td>00:18</td>
+                        <td><span class="badge threat">🚨 Deepfake</span></td>
+                        <td class="cell-confidence threat">89.4%</td>
+                        <td>1.12s</td>
+                        <td class="cell-actions">
+                            <button class="action-icon" title="View Details">👁️</button>
+                            <button class="action-icon" title="Download Report">📄</button>
+                            <button class="action-icon" title="Delete">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr class="history-row">
+                        <td><input type="checkbox"></td>
+                        <td class="cell-file">
+                            <span class="file-icon">🎵</span>
+                            <div class="file-info">
+                                <span class="file-name">intel_briefing_jan24.m4a</span>
+                                <span class="file-meta">2.1 MB • M4A</span>
+                            </div>
+                        </td>
+                        <td class="cell-date">08:42 AM</td>
+                        <td>01:02</td>
+                        <td><span class="badge authentic">✅ Authentic</span></td>
+                        <td class="cell-confidence authentic">95.8%</td>
+                        <td>2.31s</td>
+                        <td class="cell-actions">
+                            <button class="action-icon" title="View Details">👁️</button>
+                            <button class="action-icon" title="Download Report">📄</button>
+                            <button class="action-icon" title="Delete">🗑️</button>
+                        </td>
+                    </tr>
+
+                    <!-- Yesterday -->
+                    <tr class="date-separator">
+                        <td colspan="8">Yesterday - January 23, 2026</td>
+                    </tr>
+                    <tr class="history-row">
+                        <td><input type="checkbox"></td>
+                        <td class="cell-file">
+                            <span class="file-icon">🎵</span>
+                            <div class="file-info">
+                                <span class="file-name">morning_briefing.wav</span>
+                                <span class="file-meta">3.4 MB • WAV</span>
+                            </div>
+                        </td>
+                        <td class="cell-date">04:32 PM</td>
+                        <td>02:15</td>
+                        <td><span class="badge authentic">✅ Authentic</span></td>
+                        <td class="cell-confidence authentic">98.3%</td>
+                        <td>3.12s</td>
+                        <td class="cell-actions">
+                            <button class="action-icon" title="View Details">👁️</button>
+                            <button class="action-icon" title="Download Report">📄</button>
+                            <button class="action-icon" title="Delete">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr class="history-row threat-row">
+                        <td><input type="checkbox"></td>
+                        <td class="cell-file">
+                            <span class="file-icon">🎵</span>
+                            <div class="file-info">
+                                <span class="file-name">unknown_caller_msg.mp3</span>
+                                <span class="file-meta">298 KB • MP3</span>
+                            </div>
+                        </td>
+                        <td class="cell-date">02:18 PM</td>
+                        <td>00:14</td>
+                        <td><span class="badge threat">🚨 Deepfake</span></td>
+                        <td class="cell-confidence threat">91.6%</td>
+                        <td>1.08s</td>
+                        <td class="cell-actions">
+                            <button class="action-icon" title="View Details">👁️</button>
+                            <button class="action-icon" title="Download Report">📄</button>
+                            <button class="action-icon" title="Delete">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr class="history-row">
+                        <td><input type="checkbox"></td>
+                        <td class="cell-file">
+                            <span class="file-icon">🎵</span>
+                            <div class="file-info">
+                                <span class="file-name">team_call_excerpt.wav</span>
+                                <span class="file-meta">1.8 MB • WAV</span>
+                            </div>
+                        </td>
+                        <td class="cell-date">11:45 AM</td>
+                        <td>00:45</td>
+                        <td><span class="badge authentic">✅ Authentic</span></td>
+                        <td class="cell-confidence authentic">96.7%</td>
+                        <td>1.89s</td>
+                        <td class="cell-actions">
+                            <button class="action-icon" title="View Details">👁️</button>
+                            <button class="action-icon" title="Download Report">📄</button>
+                            <button class="action-icon" title="Delete">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr class="history-row">
+                        <td><input type="checkbox"></td>
+                        <td class="cell-file">
+                            <span class="file-icon">🎵</span>
+                            <div class="file-info">
+                                <span class="file-name">sector_report_alpha.wav</span>
+                                <span class="file-meta">945 KB • WAV</span>
+                            </div>
+                        </td>
+                        <td class="cell-date">09:22 AM</td>
+                        <td>00:19</td>
+                        <td><span class="badge authentic">✅ Authentic</span></td>
+                        <td class="cell-confidence authentic">94.2%</td>
+                        <td>1.15s</td>
+                        <td class="cell-actions">
+                            <button class="action-icon" title="View Details">👁️</button>
+                            <button class="action-icon" title="Download Report">📄</button>
+                            <button class="action-icon" title="Delete">🗑️</button>
+                        </td>
+                    </tr>
+
+                    <!-- Earlier -->
+                    <tr class="date-separator">
+                        <td colspan="8">January 22, 2026</td>
+                    </tr>
+                    <tr class="history-row threat-row">
+                        <td><input type="checkbox"></td>
+                        <td class="cell-file">
+                            <span class="file-icon">🎵</span>
+                            <div class="file-info">
+                                <span class="file-name">fake_order_intercept.wav</span>
+                                <span class="file-meta">634 KB • WAV</span>
+                            </div>
+                        </td>
+                        <td class="cell-date">06:48 PM</td>
+                        <td>00:16</td>
+                        <td><span class="badge threat">🚨 Deepfake</span></td>
+                        <td class="cell-confidence threat">96.8%</td>
+                        <td>1.21s</td>
+                        <td class="cell-actions">
+                            <button class="action-icon" title="View Details">👁️</button>
+                            <button class="action-icon" title="Download Report">📄</button>
+                            <button class="action-icon" title="Delete">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr class="history-row">
+                        <td><input type="checkbox"></td>
+                        <td class="cell-file">
+                            <span class="file-icon">🎵</span>
+                            <div class="file-info">
+                                <span class="file-name">confirmation_call.mp3</span>
+                                <span class="file-meta">187 KB • MP3</span>
+                            </div>
+                        </td>
+                        <td class="cell-date">03:15 PM</td>
+                        <td>00:09</td>
+                        <td><span class="badge authentic">✅ Authentic</span></td>
+                        <td class="cell-confidence authentic">92.4%</td>
+                        <td>0.87s</td>
+                        <td class="cell-actions">
+                            <button class="action-icon" title="View Details">👁️</button>
+                            <button class="action-icon" title="Download Report">📄</button>
+                            <button class="action-icon" title="Delete">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr class="history-row">
+                        <td><input type="checkbox"></td>
+                        <td class="cell-file">
+                            <span class="file-icon">🎵</span>
+                            <div class="file-info">
+                                <span class="file-name">unit_checkin_bravo.wav</span>
+                                <span class="file-meta">712 KB • WAV</span>
+                            </div>
+                        </td>
+                        <td class="cell-date">10:33 AM</td>
+                        <td>00:14</td>
+                        <td><span class="badge authentic">✅ Authentic</span></td>
+                        <td class="cell-confidence authentic">97.9%</td>
+                        <td>1.02s</td>
+                        <td class="cell-actions">
+                            <button class="action-icon" title="View Details">👁️</button>
+                            <button class="action-icon" title="Download Report">📄</button>
+                            <button class="action-icon" title="Delete">🗑️</button>
+                        </td>
+                    </tr>
+
+                    <!-- More earlier -->
+                    <tr class="date-separator">
+                        <td colspan="8">January 21, 2026</td>
+                    </tr>
+                    <tr class="history-row">
+                        <td><input type="checkbox"></td>
+                        <td class="cell-file">
+                            <span class="file-icon">🎵</span>
+                            <div class="file-info">
+                                <span class="file-name">daily_sitrep.wav</span>
+                                <span class="file-meta">2.8 MB • WAV</span>
+                            </div>
+                        </td>
+                        <td class="cell-date">05:12 PM</td>
+                        <td>01:48</td>
+                        <td><span class="badge authentic">✅ Authentic</span></td>
+                        <td class="cell-confidence authentic">98.1%</td>
+                        <td>2.67s</td>
+                        <td class="cell-actions">
+                            <button class="action-icon" title="View Details">👁️</button>
+                            <button class="action-icon" title="Download Report">📄</button>
+                            <button class="action-icon" title="Delete">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr class="history-row threat-row">
+                        <td><input type="checkbox"></td>
+                        <td class="cell-file">
+                            <span class="file-icon">🎵</span>
+                            <div class="file-info">
+                                <span class="file-name">intercepted_transmission.wav</span>
+                                <span class="file-meta">445 KB • WAV</span>
+                            </div>
+                        </td>
+                        <td class="cell-date">01:28 PM</td>
+                        <td>00:11</td>
+                        <td><span class="badge threat">🚨 Deepfake</span></td>
+                        <td class="cell-confidence threat">88.3%</td>
+                        <td>0.94s</td>
+                        <td class="cell-actions">
+                            <button class="action-icon" title="View Details">👁️</button>
+                            <button class="action-icon" title="Download Report">📄</button>
+                            <button class="action-icon" title="Delete">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr class="history-row">
+                        <td><input type="checkbox"></td>
+                        <td class="cell-file">
+                            <span class="file-icon">🎵</span>
+                            <div class="file-info">
+                                <span class="file-name">ops_coordination.m4a</span>
+                                <span class="file-meta">1.5 MB • M4A</span>
+                            </div>
+                        </td>
+                        <td class="cell-date">08:45 AM</td>
+                        <td>00:52</td>
+                        <td><span class="badge authentic">✅ Authentic</span></td>
+                        <td class="cell-confidence authentic">95.6%</td>
+                        <td>1.78s</td>
+                        <td class="cell-actions">
+                            <button class="action-icon" title="View Details">👁️</button>
+                            <button class="action-icon" title="Download Report">📄</button>
+                            <button class="action-icon" title="Delete">🗑️</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <div class="pagination-info">
+                Showing 1-15 of 247 results
+            </div>
+            <div class="pagination-controls">
+                <button class="page-btn" disabled>← Previous</button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">4</button>
+                <span class="page-dots">...</span>
+                <button class="page-btn">17</button>
+                <button class="page-btn">Next →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-left">
+            <span class="footer-brand">🛡️ Aegis-AI</span>
+            <span class="footer-version">v2.4.1</span>
+        </div>
+        <div class="footer-center">
+            Protecting against AI-generated voice fraud • 100% Offline • Zero Data Leakage
+        </div>
+        <div class="footer-right">
+            <span>© 2026 team-ZerOne</span>
+        </div>
+    </footer>
+
+    <script>
+        // Make ALL elements interactive
+        document.addEventListener('DOMContentLoaded', function() {
+            // All buttons
+            document.querySelectorAll('button, .header-btn, .page-btn').forEach(btn => {
+                btn.style.cursor = 'pointer';
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const text = this.textContent.toLowerCase();
+                    if (text.includes('report') || text.includes('export')) {
+                        window.location.href = 'report.html';
+                    } else if (text.includes('analysis') || text.includes('new')) {
+                        window.location.href = 'result.html';
+                    } else {
+                        window.location.href = 'result.html';
+                    }
+                });
+            });
+            
+            // Action icons
+            document.querySelectorAll('.action-icon').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const title = this.getAttribute('title') || '';
+                    if (title.includes('Report')) {
+                        window.location.href = 'report.html';
+                    } else {
+                        window.location.href = 'result.html';
+                    }
+                });
+            });
+            
+            // Table rows
+            document.querySelectorAll('.history-row').forEach(row => {
+                row.style.cursor = 'pointer';
+                row.addEventListener('click', function(e) {
+                    if (!e.target.closest('.action-icon') && !e.target.closest('input')) {
+                        window.location.href = 'result.html';
+                    }
+                });
+            });
+            
+            // Nav links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const text = this.textContent.toLowerCase();
+                    if (text.includes('dashboard')) {
+                        window.location.href = 'index.html';
+                    } else if (text.includes('history')) {
+                        window.location.href = 'history.html';
+                    } else if (text.includes('report')) {
+                        window.location.href = 'report.html';
+                    } else {
+                        window.location.href = 'result.html';
+                    }
+                });
+            });
+            
+            // Stat items
+            document.querySelectorAll('.stat-item').forEach(el => {
+                el.style.cursor = 'pointer';
+                el.addEventListener('click', () => window.location.href = 'result.html');
+            });
+            
+            // Status badge and avatar
+            document.querySelector('.status-badge')?.addEventListener('click', () => window.location.href = 'result.html');
+            document.querySelector('.user-avatar')?.addEventListener('click', () => window.location.href = 'index.html');
+            
+            // Search box
+            document.querySelector('.search-input')?.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    window.location.href = 'result.html';
+                }
+            });
+            
+            // Filter selects
+            document.querySelectorAll('.filter-select').forEach(sel => {
+                sel.addEventListener('change', () => window.location.href = 'history.html');
+            });
+        });
+    </script>
+</body>
+</html>

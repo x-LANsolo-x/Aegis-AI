@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports | Aegis-AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="reports-styles.css">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="nav-brand">
+            <span class="shield-icon">🛡️</span>
+            <span class="brand-text">AEGIS<span class="brand-ai">AI</span></span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Dashboard</a>
+            <a href="history.html" class="nav-link">Analysis History</a>
+            <a href="reports.html" class="nav-link active">Reports</a>
+            <a href="result.html" class="nav-link">Settings</a>
+        </div>
+        <div class="nav-right">
+            <div class="status-badge online">
+                <span class="status-dot"></span>
+                <span>Offline Mode Active</span>
+            </div>
+            <div class="user-avatar">
+                <span>CO</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="reports-page">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="header-left">
+                <h1 class="page-title">Forensic Reports</h1>
+                <p class="page-subtitle">View, download, and manage all generated analysis reports</p>
+            </div>
+            <div class="header-actions">
+                <button class="header-btn">📥 Export All (ZIP)</button>
+                <button class="header-btn">🖨️ Batch Print</button>
+                <button class="header-btn primary">📄 Generate New Report</button>
+            </div>
+        </div>
+
+        <!-- Stats Overview -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <span class="stat-number">89</span>
+                <span class="stat-label">Total Reports</span>
+            </div>
+            <div class="stat-item threat">
+                <span class="stat-number">44</span>
+                <span class="stat-label">Threat Reports</span>
+            </div>
+            <div class="stat-item authentic">
+                <span class="stat-number">45</span>
+                <span class="stat-label">Verification Reports</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">12</span>
+                <span class="stat-label">This Week</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">156 MB</span>
+                <span class="stat-label">Total Size</span>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters-bar">
+            <div class="filter-group">
+                <label class="filter-label">Type:</label>
+                <select class="filter-select">
+                    <option>All Reports</option>
+                    <option>Threat Reports</option>
+                    <option>Verification Reports</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label class="filter-label">Date Range:</label>
+                <select class="filter-select">
+                    <option>All Time</option>
+                    <option>Today</option>
+                    <option>Last 7 Days</option>
+                    <option>Last 30 Days</option>
+                    <option>Last 90 Days</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label class="filter-label">Sort By:</label>
+                <select class="filter-select">
+                    <option>Newest First</option>
+                    <option>Oldest First</option>
+                    <option>Confidence (High-Low)</option>
+                    <option>File Name (A-Z)</option>
+                </select>
+            </div>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Search reports..." class="search-input">
+            </div>
+        </div>
+
+        <!-- Reports Grid -->
+        <div class="reports-grid">
+            <!-- Threat Report 1 -->
+            <div class="report-card threat">
+                <div class="report-header">
+                    <div class="report-type-badge threat">🚨 THREAT DETECTED</div>
+                    <div class="report-date">Jan 24, 2026 • 10:47 AM</div>
+                </div>
+                <div class="report-body">
+                    <div class="report-icon">📄</div>
+                    <div class="report-info">
+                        <h3 class="report-title">AGS-2026-0124-4721</h3>
+                        <p class="report-file">urgent_command_audio.wav</p>
+                        <div class="report-meta">
+                            <span class="meta-item">
+                                <span class="meta-label">Confidence:</span>
+                                <span class="meta-value threat">94.7%</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Duration:</span>
+                                <span class="meta-value">00:12</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Size:</span>
+                                <span class="meta-value">2.4 MB</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="report-footer">
+                    <button class="report-btn view">👁️ View Full Report</button>
+                    <button class="report-btn download">📥 Download PDF</button>
+                </div>
+            </div>
+
+            <!-- Authentic Report 1 -->
+            <div class="report-card authentic">
+                <div class="report-header">
+                    <div class="report-type-badge authentic">✅ VERIFIED AUTHENTIC</div>
+                    <div class="report-date">Jan 24, 2026 • 10:32 AM</div>
+                </div>
+                <div class="report-body">
+                    <div class="report-icon">📄</div>
+                    <div class="report-info">
+                        <h3 class="report-title">AGS-2026-0124-4720</h3>
+                        <p class="report-file">commander_voice_note.wav</p>
+                        <div class="report-meta">
+                            <span class="meta-item">
+                                <span class="meta-label">Confidence:</span>
+                                <span class="meta-value authentic">97.2%</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Duration:</span>
+                                <span class="meta-value">00:08</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Size:</span>
+                                <span class="meta-value">1.8 MB</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="report-footer">
+                    <button class="report-btn view">👁️ View Full Report</button>
+                    <button class="report-btn download">📥 Download PDF</button>
+                </div>
+            </div>
+
+            <!-- Threat Report 2 -->
+            <div class="report-card threat">
+                <div class="report-header">
+                    <div class="report-type-badge threat">🚨 THREAT DETECTED</div>
+                    <div class="report-date">Jan 24, 2026 • 09:15 AM</div>
+                </div>
+                <div class="report-body">
+                    <div class="report-icon">📄</div>
+                    <div class="report-info">
+                        <h3 class="report-title">AGS-2026-0124-4718</h3>
+                        <p class="report-file">suspicious_voicemail.mp3</p>
+                        <div class="report-meta">
+                            <span class="meta-item">
+                                <span class="meta-label">Confidence:</span>
+                                <span class="meta-value threat">89.4%</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Duration:</span>
+                                <span class="meta-value">00:18</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Size:</span>
+                                <span class="meta-value">1.9 MB</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="report-footer">
+                    <button class="report-btn view">👁️ View Full Report</button>
+                    <button class="report-btn download">📥 Download PDF</button>
+                </div>
+            </div>
+
+            <!-- Authentic Report 2 -->
+            <div class="report-card authentic">
+                <div class="report-header">
+                    <div class="report-type-badge authentic">✅ VERIFIED AUTHENTIC</div>
+                    <div class="report-date">Jan 24, 2026 • 08:42 AM</div>
+                </div>
+                <div class="report-body">
+                    <div class="report-icon">📄</div>
+                    <div class="report-info">
+                        <h3 class="report-title">AGS-2026-0124-4715</h3>
+                        <p class="report-file">intel_briefing_jan24.m4a</p>
+                        <div class="report-meta">
+                            <span class="meta-item">
+                                <span class="meta-label">Confidence:</span>
+                                <span class="meta-value authentic">95.8%</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Duration:</span>
+                                <span class="meta-value">01:02</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Size:</span>
+                                <span class="meta-value">3.2 MB</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="report-footer">
+                    <button class="report-btn view">👁️ View Full Report</button>
+                    <button class="report-btn download">📥 Download PDF</button>
+                </div>
+            </div>
+
+            <!-- Threat Report 3 -->
+            <div class="report-card threat">
+                <div class="report-header">
+                    <div class="report-type-badge threat">🚨 THREAT DETECTED</div>
+                    <div class="report-date">Jan 23, 2026 • 02:18 PM</div>
+                </div>
+                <div class="report-body">
+                    <div class="report-icon">📄</div>
+                    <div class="report-info">
+                        <h3 class="report-title">AGS-2026-0123-4698</h3>
+                        <p class="report-file">unknown_caller_msg.mp3</p>
+                        <div class="report-meta">
+                            <span class="meta-item">
+                                <span class="meta-label">Confidence:</span>
+                                <span class="meta-value threat">91.6%</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Duration:</span>
+                                <span class="meta-value">00:14</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Size:</span>
+                                <span class="meta-value">1.5 MB</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="report-footer">
+                    <button class="report-btn view">👁️ View Full Report</button>
+                    <button class="report-btn download">📥 Download PDF</button>
+                </div>
+            </div>
+
+            <!-- Authentic Report 3 -->
+            <div class="report-card authentic">
+                <div class="report-header">
+                    <div class="report-type-badge authentic">✅ VERIFIED AUTHENTIC</div>
+                    <div class="report-date">Jan 23, 2026 • 11:45 AM</div>
+                </div>
+                <div class="report-body">
+                    <div class="report-icon">📄</div>
+                    <div class="report-info">
+                        <h3 class="report-title">AGS-2026-0123-4692</h3>
+                        <p class="report-file">team_call_excerpt.wav</p>
+                        <div class="report-meta">
+                            <span class="meta-item">
+                                <span class="meta-label">Confidence:</span>
+                                <span class="meta-value authentic">96.7%</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Duration:</span>
+                                <span class="meta-value">00:45</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Size:</span>
+                                <span class="meta-value">2.8 MB</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="report-footer">
+                    <button class="report-btn view">👁️ View Full Report</button>
+                    <button class="report-btn download">📥 Download PDF</button>
+                </div>
+            </div>
+
+            <!-- Threat Report 4 -->
+            <div class="report-card threat">
+                <div class="report-header">
+                    <div class="report-type-badge threat">🚨 THREAT DETECTED</div>
+                    <div class="report-date">Jan 22, 2026 • 06:48 PM</div>
+                </div>
+                <div class="report-body">
+                    <div class="report-icon">📄</div>
+                    <div class="report-info">
+                        <h3 class="report-title">AGS-2026-0122-4671</h3>
+                        <p class="report-file">fake_order_intercept.wav</p>
+                        <div class="report-meta">
+                            <span class="meta-item">
+                                <span class="meta-label">Confidence:</span>
+                                <span class="meta-value threat">96.8%</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Duration:</span>
+                                <span class="meta-value">00:16</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Size:</span>
+                                <span class="meta-value">2.1 MB</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="report-footer">
+                    <button class="report-btn view">👁️ View Full Report</button>
+                    <button class="report-btn download">📥 Download PDF</button>
+                </div>
+            </div>
+
+            <!-- Authentic Report 4 -->
+            <div class="report-card authentic">
+                <div class="report-header">
+                    <div class="report-type-badge authentic">✅ VERIFIED AUTHENTIC</div>
+                    <div class="report-date">Jan 22, 2026 • 03:15 PM</div>
+                </div>
+                <div class="report-body">
+                    <div class="report-icon">📄</div>
+                    <div class="report-info">
+                        <h3 class="report-title">AGS-2026-0122-4665</h3>
+                        <p class="report-file">confirmation_call.mp3</p>
+                        <div class="report-meta">
+                            <span class="meta-item">
+                                <span class="meta-label">Confidence:</span>
+                                <span class="meta-value authentic">92.4%</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Duration:</span>
+                                <span class="meta-value">00:09</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Size:</span>
+                                <span class="meta-value">1.2 MB</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="report-footer">
+                    <button class="report-btn view">👁️ View Full Report</button>
+                    <button class="report-btn download">📥 Download PDF</button>
+                </div>
+            </div>
+
+            <!-- Threat Report 5 -->
+            <div class="report-card threat">
+                <div class="report-header">
+                    <div class="report-type-badge threat">🚨 THREAT DETECTED</div>
+                    <div class="report-date">Jan 21, 2026 • 01:28 PM</div>
+                </div>
+                <div class="report-body">
+                    <div class="report-icon">📄</div>
+                    <div class="report-info">
+                        <h3 class="report-title">AGS-2026-0121-4642</h3>
+                        <p class="report-file">intercepted_transmission.wav</p>
+                        <div class="report-meta">
+                            <span class="meta-item">
+                                <span class="meta-label">Confidence:</span>
+                                <span class="meta-value threat">88.3%</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Duration:</span>
+                                <span class="meta-value">00:11</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Size:</span>
+                                <span class="meta-value">1.7 MB</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="report-footer">
+                    <button class="report-btn view">👁️ View Full Report</button>
+                    <button class="report-btn download">📥 Download PDF</button>
+                </div>
+            </div>
+
+            <!-- Authentic Report 5 -->
+            <div class="report-card authentic">
+                <div class="report-header">
+                    <div class="report-type-badge authentic">✅ VERIFIED AUTHENTIC</div>
+                    <div class="report-date">Jan 21, 2026 • 08:45 AM</div>
+                </div>
+                <div class="report-body">
+                    <div class="report-icon">📄</div>
+                    <div class="report-info">
+                        <h3 class="report-title">AGS-2026-0121-4638</h3>
+                        <p class="report-file">ops_coordination.m4a</p>
+                        <div class="report-meta">
+                            <span class="meta-item">
+                                <span class="meta-label">Confidence:</span>
+                                <span class="meta-value authentic">95.6%</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Duration:</span>
+                                <span class="meta-value">00:52</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Size:</span>
+                                <span class="meta-value">2.9 MB</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="report-footer">
+                    <button class="report-btn view">👁️ View Full Report</button>
+                    <button class="report-btn download">📥 Download PDF</button>
+                </div>
+            </div>
+
+            <!-- Authentic Report 6 -->
+            <div class="report-card authentic">
+                <div class="report-header">
+                    <div class="report-type-badge authentic">✅ VERIFIED AUTHENTIC</div>
+                    <div class="report-date">Jan 20, 2026 • 04:22 PM</div>
+                </div>
+                <div class="report-body">
+                    <div class="report-icon">📄</div>
+                    <div class="report-info">
+                        <h3 class="report-title">AGS-2026-0120-4621</h3>
+                        <p class="report-file">daily_sitrep_jan20.wav</p>
+                        <div class="report-meta">
+                            <span class="meta-item">
+                                <span class="meta-label">Confidence:</span>
+                                <span class="meta-value authentic">98.1%</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Duration:</span>
+                                <span class="meta-value">01:48</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Size:</span>
+                                <span class="meta-value">4.1 MB</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="report-footer">
+                    <button class="report-btn view">👁️ View Full Report</button>
+                    <button class="report-btn download">📥 Download PDF</button>
+                </div>
+            </div>
+
+            <!-- Threat Report 6 -->
+            <div class="report-card threat">
+                <div class="report-header">
+                    <div class="report-type-badge threat">🚨 THREAT DETECTED</div>
+                    <div class="report-date">Jan 20, 2026 • 11:15 AM</div>
+                </div>
+                <div class="report-body">
+                    <div class="report-icon">📄</div>
+                    <div class="report-info">
+                        <h3 class="report-title">AGS-2026-0120-4615</h3>
+                        <p class="report-file">spoofed_directive.mp3</p>
+                        <div class="report-meta">
+                            <span class="meta-item">
+                                <span class="meta-label">Confidence:</span>
+                                <span class="meta-value threat">93.2%</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Duration:</span>
+                                <span class="meta-value">00:22</span>
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-label">Size:</span>
+                                <span class="meta-value">2.0 MB</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="report-footer">
+                    <button class="report-btn view">👁️ View Full Report</button>
+                    <button class="report-btn download">📥 Download PDF</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <div class="pagination-info">
+                Showing 1-12 of 89 reports
+            </div>
+            <div class="pagination-controls">
+                <button class="page-btn" disabled>← Previous</button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">4</button>
+                <span class="page-dots">...</span>
+                <button class="page-btn">8</button>
+                <button class="page-btn">Next →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-left">
+            <span class="footer-brand">🛡️ Aegis-AI</span>
+            <span class="footer-version">v2.4.1</span>
+        </div>
+        <div class="footer-center">
+            Protecting against AI-generated voice fraud • 100% Offline • Zero Data Leakage
+        </div>
+        <div class="footer-right">
+            <span>© 2026 team-ZerOne</span>
+        </div>
+    </footer>
+
+    <script>
+        // Make ALL elements interactive
+        document.addEventListener('DOMContentLoaded', function() {
+            // Header buttons
+            document.querySelectorAll('.header-btn, .page-btn').forEach(btn => {
+                btn.style.cursor = 'pointer';
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const text = this.textContent.toLowerCase();
+                    if (text.includes('new') || text.includes('generate')) {
+                        window.location.href = 'result.html';
+                    } else {
+                        window.location.href = 'report.html';
+                    }
+                });
+            });
+            
+            // View Full Report buttons
+            document.querySelectorAll('.report-btn.view').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    window.location.href = 'report.html';
+                });
+            });
+            
+            // Download PDF buttons
+            document.querySelectorAll('.report-btn.download').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    window.location.href = 'report.html';
+                });
+            });
+            
+            // Report cards clickable
+            document.querySelectorAll('.report-card').forEach(card => {
+                card.style.cursor = 'pointer';
+                card.addEventListener('click', function(e) {
+                    if (!e.target.closest('.report-btn')) {
+                        window.location.href = 'report.html';
+                    }
+                });
+            });
+            
+            // Nav links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const text = this.textContent.toLowerCase();
+                    if (text.includes('dashboard')) {
+                        window.location.href = 'index.html';
+                    } else if (text.includes('history')) {
+                        window.location.href = 'history.html';
+                    } else if (text.includes('report')) {
+                        window.location.href = 'reports.html';
+                    } else {
+                        window.location.href = 'result.html';
+                    }
+                });
+            });
+            
+            // Stat items
+            document.querySelectorAll('.stat-item').forEach(el => {
+                el.style.cursor = 'pointer';
+                el.addEventListener('click', () => window.location.href = 'report.html');
+            });
+            
+            // Status badge and avatar
+            document.querySelector('.status-badge')?.addEventListener('click', () => window.location.href = 'result.html');
+            document.querySelector('.user-avatar')?.addEventListener('click', () => window.location.href = 'index.html');
+            
+            // Search box
+            document.querySelector('.search-input')?.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    window.location.href = 'report.html';
+                }
+            });
+            
+            // Filter selects
+            document.querySelectorAll('.filter-select').forEach(sel => {
+                sel.addEventListener('change', () => window.location.href = 'reports.html');
+            });
+        });
+    </script>
+</body>
+</html>

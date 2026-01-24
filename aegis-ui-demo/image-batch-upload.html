@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Batch Upload | Aegis-AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="batch-upload-styles.css">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="nav-brand">
+            <span class="shield-icon">🛡️</span>
+            <span class="brand-text">AEGIS<span class="brand-ai">AI</span></span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Dashboard</a>
+            <a href="history.html" class="nav-link">Analysis History</a>
+            <a href="reports.html" class="nav-link">Reports</a>
+            <a href="result.html" class="nav-link">Settings</a>
+        </div>
+        <div class="nav-right">
+            <div class="status-badge online">
+                <span class="status-dot"></span>
+                <span>Offline Mode Active</span>
+            </div>
+            <div class="user-avatar">
+                <span>CO</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="batch-page">
+        <!-- Page Header -->
+        <div class="page-header">
+            <a href="image-dashboard.html" class="back-link">← Back to Dashboard</a>
+            <h1 class="page-title">Image Batch Upload & Analysis</h1>
+            <p class="page-subtitle">Upload multiple images for bulk manipulation detection</p>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="batch-container">
+            <!-- Upload Section -->
+            <div class="upload-section">
+                <div class="upload-zone" id="dropZone">
+                    <div class="upload-icon">
+                        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="17 8 12 3 7 8"/>
+                            <line x1="12" y1="3" x2="12" y2="15"/>
+                        </svg>
+                    </div>
+                    <h2 class="upload-title">Drop multiple image files here</h2>
+                    <p class="upload-subtitle">or click to select files</p>
+                    <div class="upload-formats">
+                        <span class="format-tag">JPG</span>
+                        <span class="format-tag">PNG</span>
+                        <span class="format-tag">WEBP</span>
+                        <span class="format-tag">BMP</span>
+                    </div>
+                    <p class="upload-limit">Up to 100 files • Max 25MB each</p>
+                </div>
+
+                <!-- File Queue -->
+                <div class="file-queue">
+                    <div class="queue-header">
+                        <h3 class="queue-title">📁 Upload Queue</h3>
+                        <span class="queue-count">8 files selected</span>
+                    </div>
+                    
+                    <div class="queue-list">
+                        <div class="queue-item">
+                            <div class="item-icon">🎵</div>
+                            <div class="item-info">
+                                <span class="item-name">urgent_command_audio.wav</span>
+                                <span class="item-size">847 KB</span>
+                            </div>
+                            <div class="item-status pending">Pending</div>
+                            <button class="item-remove">✕</button>
+                        </div>
+                        <div class="queue-item">
+                            <div class="item-icon">🎵</div>
+                            <div class="item-info">
+                                <span class="item-name">commander_voice_note.wav</span>
+                                <span class="item-size">523 KB</span>
+                            </div>
+                            <div class="item-status pending">Pending</div>
+                            <button class="item-remove">✕</button>
+                        </div>
+                        <div class="queue-item">
+                            <div class="item-icon">🎵</div>
+                            <div class="item-info">
+                                <span class="item-name">field_report_recording.wav</span>
+                                <span class="item-size">1.2 MB</span>
+                            </div>
+                            <div class="item-status pending">Pending</div>
+                            <button class="item-remove">✕</button>
+                        </div>
+                        <div class="queue-item">
+                            <div class="item-icon">🎵</div>
+                            <div class="item-info">
+                                <span class="item-name">suspicious_voicemail.mp3</span>
+                                <span class="item-size">412 KB</span>
+                            </div>
+                            <div class="item-status pending">Pending</div>
+                            <button class="item-remove">✕</button>
+                        </div>
+                        <div class="queue-item">
+                            <div class="item-icon">🎵</div>
+                            <div class="item-info">
+                                <span class="item-name">intel_briefing_jan24.m4a</span>
+                                <span class="item-size">2.1 MB</span>
+                            </div>
+                            <div class="item-status pending">Pending</div>
+                            <button class="item-remove">✕</button>
+                        </div>
+                        <div class="queue-item">
+                            <div class="item-icon">🎵</div>
+                            <div class="item-info">
+                                <span class="item-name">morning_briefing.wav</span>
+                                <span class="item-size">3.4 MB</span>
+                            </div>
+                            <div class="item-status pending">Pending</div>
+                            <button class="item-remove">✕</button>
+                        </div>
+                        <div class="queue-item">
+                            <div class="item-icon">🎵</div>
+                            <div class="item-info">
+                                <span class="item-name">unknown_caller_msg.mp3</span>
+                                <span class="item-size">298 KB</span>
+                            </div>
+                            <div class="item-status pending">Pending</div>
+                            <button class="item-remove">✕</button>
+                        </div>
+                        <div class="queue-item">
+                            <div class="item-icon">🎵</div>
+                            <div class="item-info">
+                                <span class="item-name">team_call_excerpt.wav</span>
+                                <span class="item-size">1.8 MB</span>
+                            </div>
+                            <div class="item-status pending">Pending</div>
+                            <button class="item-remove">✕</button>
+                        </div>
+                    </div>
+
+                    <div class="queue-footer">
+                        <button class="clear-all-btn">🗑️ Clear All</button>
+                        <div class="queue-total">
+                            <span>Total:</span>
+                            <strong>10.5 MB</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings & Progress Section -->
+            <div class="settings-section">
+                <!-- Batch Settings -->
+                <div class="settings-card">
+                    <h3 class="card-title">⚙️ Batch Settings</h3>
+                    
+                    <div class="setting-group">
+                        <label class="setting-label">Processing Mode</label>
+                        <select class="setting-select">
+                            <option>Sequential (One at a time)</option>
+                            <option selected>Parallel (Faster)</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-group">
+                        <label class="setting-label">On Threat Detection</label>
+                        <select class="setting-select">
+                            <option selected>Continue processing</option>
+                            <option>Pause and alert</option>
+                            <option>Stop batch</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-group">
+                        <label class="setting-label">Output Options</label>
+                        <div class="checkbox-options">
+                            <label class="checkbox-option">
+                                <input type="checkbox" checked>
+                                <span class="checkbox-mark"></span>
+                                <span>Generate individual reports</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" checked>
+                                <span class="checkbox-mark"></span>
+                                <span>Create summary report</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox">
+                                <span class="checkbox-mark"></span>
+                                <span>Export to CSV</span>
+                            </label>
+                            <label class="checkbox-option">
+                                <input type="checkbox" checked>
+                                <span class="checkbox-mark"></span>
+                                <span>Save to history</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress Card (shown during processing) -->
+                <div class="progress-card">
+                    <h3 class="card-title">📊 Batch Progress</h3>
+                    
+                    <div class="progress-overview">
+                        <div class="progress-circle">
+                            <svg viewBox="0 0 100 100">
+                                <circle class="progress-bg" cx="50" cy="50" r="40"/>
+                                <circle class="progress-fill" cx="50" cy="50" r="40" 
+                                    stroke-dasharray="251" stroke-dashoffset="188"/>
+                            </svg>
+                            <div class="progress-text">
+                                <span class="progress-num">0</span>
+                                <span class="progress-of">/8</span>
+                            </div>
+                        </div>
+                        <div class="progress-stats">
+                            <div class="stat-row">
+                                <span class="stat-label">Completed</span>
+                                <span class="stat-value">0</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">Pending</span>
+                                <span class="stat-value">8</span>
+                            </div>
+                            <div class="stat-row authentic">
+                                <span class="stat-label">✅ Authentic</span>
+                                <span class="stat-value">0</span>
+                            </div>
+                            <div class="stat-row threat">
+                                <span class="stat-label">🚨 Threats</span>
+                                <span class="stat-value">0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="progress-bar-container">
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-percent">0%</span>
+                    </div>
+
+                    <div class="eta-info">
+                        <span>Estimated time remaining:</span>
+                        <strong>~12 seconds</strong>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="start-batch-btn">
+                        🚀 Start Batch Analysis
+                    </button>
+                    <button class="secondary-btn">
+                        💾 Save Queue
+                    </button>
+                </div>
+
+                <!-- Info Panel -->
+                <div class="info-panel">
+                    <div class="info-item">
+                        <span class="info-icon">⚡</span>
+                        <span>Parallel processing: ~1.5s per file</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">📴</span>
+                        <span>All processing happens offline</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">📄</span>
+                        <span>Reports auto-generated on completion</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-left">
+            <span class="footer-brand">🛡️ Aegis-AI</span>
+            <span class="footer-version">v2.4.1</span>
+        </div>
+        <div class="footer-center">
+            Protecting against AI-generated voice fraud • 100% Offline • Zero Data Leakage
+        </div>
+        <div class="footer-right">
+            <span>© 2026 team-ZerOne</span>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Upload zone
+            document.getElementById('dropZone').addEventListener('click', () => {
+                window.location.href = 'image-result.html';
+            });
+            
+            // Start batch button
+            document.querySelector('.start-batch-btn').addEventListener('click', () => {
+                window.location.href = 'image-result.html';
+            });
+            
+            // Secondary button
+            document.querySelector('.secondary-btn').addEventListener('click', () => {
+                window.location.href = 'image-result.html';
+            });
+            
+            // Queue items
+            document.querySelectorAll('.queue-item').forEach(item => {
+                item.style.cursor = 'pointer';
+                item.addEventListener('click', () => {
+                    window.location.href = 'image-result.html';
+                });
+            });
+            
+            // Remove buttons
+            document.querySelectorAll('.item-remove').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    btn.closest('.queue-item').style.display = 'none';
+                });
+            });
+            
+            // Clear all
+            document.querySelector('.clear-all-btn').addEventListener('click', () => {
+                document.querySelectorAll('.queue-item').forEach(item => {
+                    item.style.display = 'none';
+                });
+            });
+            
+            // Nav links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.location.href = this.getAttribute('href');
+                });
+            });
+            
+            // Status badge and avatar
+            document.querySelector('.status-badge')?.addEventListener('click', () => window.location.href = 'image-result.html');
+            document.querySelector('.user-avatar')?.addEventListener('click', () => window.location.href = 'index.html');
+        });
+    </script>
+</body>
+</html>

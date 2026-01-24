@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aegis-AI | Deepfake Detection Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script>
+        // Make ALL interactive elements lead to sample pages
+        document.addEventListener('DOMContentLoaded', function() {
+            // Upload zone click
+            document.getElementById('dropZone').addEventListener('click', function() {
+                window.location.href = 'result.html';
+            });
+            
+            // Buttons with specific onclick handlers should work as defined
+            // Only handle buttons without onclick attribute
+            document.querySelectorAll('button, .record-btn, .action-btn').forEach(btn => {
+                if (!btn.hasAttribute('onclick')) {
+                    btn.style.cursor = 'pointer';
+                    btn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        const text = this.textContent.toLowerCase();
+                        if (text.includes('report')) {
+                            window.location.href = 'report.html';
+                        } else {
+                            window.location.href = 'result.html';
+                        }
+                    });
+                }
+            });
+            
+            // ALL navigation links
+            document.querySelectorAll('.nav-link, .view-all').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const text = this.textContent.toLowerCase();
+                    if (text.includes('dashboard')) {
+                        window.location.href = 'index.html';
+                    } else if (text.includes('report')) {
+                        window.location.href = 'report.html';
+                    } else {
+                        window.location.href = 'result.html';
+                    }
+                });
+            });
+            
+            // Icon buttons
+            document.querySelectorAll('.icon-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const title = this.getAttribute('title') || '';
+                    if (title.includes('Report') || title.includes('Download')) {
+                        window.location.href = 'report.html';
+                    } else {
+                        window.location.href = 'result.html';
+                    }
+                });
+            });
+            
+            // Table rows clickable
+            document.querySelectorAll('.table-row').forEach(row => {
+                row.style.cursor = 'pointer';
+                row.addEventListener('click', function(e) {
+                    if (!e.target.closest('.icon-btn')) {
+                        window.location.href = 'result.html';
+                    }
+                });
+            });
+            
+            // Checkboxes - just toggle without navigation
+            document.querySelectorAll('.option-checkbox input').forEach(checkbox => {
+                checkbox.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            });
+            
+            // Status badge and user avatar
+            document.querySelector('.status-badge').addEventListener('click', function() {
+                window.location.href = 'result.html';
+            });
+            
+            document.querySelector('.user-avatar').addEventListener('click', function() {
+                window.location.href = 'result.html';
+            });
+            
+            // Stat cards
+            document.querySelectorAll('.stat-card, .stat-mini').forEach(el => {
+                el.style.cursor = 'pointer';
+                el.addEventListener('click', function() {
+                    window.location.href = 'result.html';
+                });
+            });
+            
+            // Status items
+            document.querySelectorAll('.status-item').forEach(el => {
+                el.style.cursor = 'pointer';
+                el.addEventListener('click', function() {
+                    window.location.href = 'result.html';
+                });
+            });
+            
+            // Media type tabs - switch active state and reload same page
+            document.querySelectorAll('.media-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    document.querySelectorAll('.media-tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    // Same dashboard for all tabs - just visual change
+                });
+            });
+        });
+    </script>
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="nav-brand">
+            <span class="shield-icon">🛡️</span>
+            <span class="brand-text">AEGIS<span class="brand-ai">AI</span></span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link active">Dashboard</a>
+            <a href="history.html" class="nav-link">Analysis History</a>
+            <a href="reports.html" class="nav-link">Reports</a>
+            <a href="result.html" class="nav-link">Settings</a>
+        </div>
+        <div class="nav-right">
+            <div class="status-badge online">
+                <span class="status-dot"></span>
+                <span>Offline Mode Active</span>
+            </div>
+            <div class="user-avatar">
+                <span>CO</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Quick Actions</h3>
+                <button class="sidebar-btn primary" onclick="window.location.href='new-analysis.html'">
+                    <span class="btn-icon">🎤</span>
+                    New Analysis
+                </button>
+                <button class="sidebar-btn" onclick="window.location.href='batch-upload.html'">
+                    <span class="btn-icon">📁</span>
+                    Batch Upload
+                </button>
+                <button class="sidebar-btn" onclick="window.location.href='generate-report.html'">
+                    <span class="btn-icon">📊</span>
+                    Generate Report
+                </button>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">System Status</h3>
+                <div class="status-item">
+                    <span class="status-label">Detection Engine</span>
+                    <span class="status-value active">Active</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Model Version</span>
+                    <span class="status-value">v2.4.1</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Last Sync</span>
+                    <span class="status-value">2 hrs ago</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Federated Learning</span>
+                    <span class="status-value active">Connected</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Today's Stats</h3>
+                <div class="stat-card">
+                    <div class="stat-number">47</div>
+                    <div class="stat-label">Scans Today</div>
+                </div>
+                <div class="stat-row">
+                    <div class="stat-mini">
+                        <span class="stat-mini-num green">38</span>
+                        <span class="stat-mini-label">Authentic</span>
+                    </div>
+                    <div class="stat-mini">
+                        <span class="stat-mini-num red">9</span>
+                        <span class="stat-mini-label">Threats</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Media Type Tabs -->
+            <div class="media-tabs">
+                <button class="media-tab active" data-type="audio">
+                    <span class="tab-icon">🎵</span>
+                    <span class="tab-text">Audio</span>
+                </button>
+                <button class="media-tab" data-type="video" onclick="window.location.href='video-dashboard.html'">
+                    <span class="tab-icon">🎬</span>
+                    <span class="tab-text">Video</span>
+                </button>
+                <button class="media-tab" data-type="image" onclick="window.location.href='image-dashboard.html'">
+                    <span class="tab-icon">🖼️</span>
+                    <span class="tab-text">Image</span>
+                </button>
+            </div>
+
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div class="section-header">
+                    <h1 class="section-title">Audio Verification</h1>
+                    <p class="section-subtitle">Upload or record audio for real-time deepfake analysis</p>
+                </div>
+                
+                <div class="upload-area">
+                    <div class="upload-zone" id="dropZone">
+                        <div class="upload-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="17 8 12 3 7 8"/>
+                                <line x1="12" y1="3" x2="12" y2="15"/>
+                            </svg>
+                        </div>
+                        <h3 class="upload-title">Drop audio file here</h3>
+                        <p class="upload-subtitle">or click to browse • WAV, MP3, M4A, FLAC supported</p>
+                        <div class="upload-divider">
+                            <span>OR</span>
+                        </div>
+                        <button class="record-btn">
+                            <span class="record-icon"></span>
+                            Record Live Audio
+                        </button>
+                    </div>
+                    
+                    <div class="upload-options">
+                        <label class="option-checkbox">
+                            <input type="checkbox" checked>
+                            <span class="checkmark"></span>
+                            Enable real-time analysis
+                        </label>
+                        <label class="option-checkbox">
+                            <input type="checkbox" checked>
+                            <span class="checkmark"></span>
+                            Generate detailed report
+                        </label>
+                        <label class="option-checkbox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                            Save to analysis history
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section">
+                <div class="result-card threat">
+                    <div class="result-header">
+                        <div class="result-status">
+                            <span class="result-icon">🚨</span>
+                            <div class="result-title-group">
+                                <h2 class="result-title">Threat Detected</h2>
+                                <span class="result-tag">HIGH RISK</span>
+                            </div>
+                        </div>
+                        <div class="result-confidence">
+                            <span class="confidence-label">Confidence</span>
+                            <span class="confidence-value">94.7%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="result-body">
+                        <div class="confidence-bar">
+                            <div class="confidence-fill" style="width: 94.7%"></div>
+                        </div>
+                        
+                        <div class="analysis-grid">
+                            <div class="analysis-item">
+                                <div class="analysis-icon">🎯</div>
+                                <div class="analysis-content">
+                                    <h4>Pitch Consistency</h4>
+                                    <p>Unnaturally uniform pitch patterns detected, typical of neural TTS systems</p>
+                                </div>
+                                <div class="analysis-score bad">-0.89</div>
+                            </div>
+                            <div class="analysis-item">
+                                <div class="analysis-icon">📊</div>
+                                <div class="analysis-content">
+                                    <h4>Spectral Analysis</h4>
+                                    <p>Missing high-frequency harmonics that occur in natural human speech</p>
+                                </div>
+                                <div class="analysis-score bad">-0.76</div>
+                            </div>
+                            <div class="analysis-item">
+                                <div class="analysis-icon">🔊</div>
+                                <div class="analysis-content">
+                                    <h4>Breathing Patterns</h4>
+                                    <p>No natural breathing artifacts or micro-pauses detected</p>
+                                </div>
+                                <div class="analysis-score bad">-0.92</div>
+                            </div>
+                            <div class="analysis-item">
+                                <div class="analysis-icon">⚡</div>
+                                <div class="analysis-content">
+                                    <h4>Temporal Dynamics</h4>
+                                    <p>Suspiciously smooth energy transitions between phonemes</p>
+                                </div>
+                                <div class="analysis-score bad">-0.81</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="result-footer">
+                        <div class="result-meta">
+                            <span class="meta-item">
+                                <span class="meta-icon">⏱️</span>
+                                Analyzed in 1.2s
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-icon">📄</span>
+                                audio_message_jan24.wav
+                            </span>
+                            <span class="meta-item">
+                                <span class="meta-icon">📴</span>
+                                Processed Offline
+                            </span>
+                        </div>
+                        <div class="result-actions">
+                            <button class="action-btn secondary">View Full Report</button>
+                            <button class="action-btn primary">Flag & Report</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Analysis -->
+            <section class="history-section">
+                <div class="section-header">
+                    <h2 class="section-title-sm">Recent Analysis</h2>
+                    <a href="history.html" class="view-all">View All →</a>
+                </div>
+                
+                <div class="history-table">
+                    <div class="table-header">
+                        <span class="th">File Name</span>
+                        <span class="th">Date & Time</span>
+                        <span class="th">Duration</span>
+                        <span class="th">Result</span>
+                        <span class="th">Confidence</span>
+                        <span class="th">Actions</span>
+                    </div>
+                    <div class="table-row">
+                        <span class="td file-name">
+                            <span class="file-icon">🎵</span>
+                            commander_voice_note.wav
+                        </span>
+                        <span class="td">Jan 24, 2026 • 10:45 AM</span>
+                        <span class="td">0:08</span>
+                        <span class="td"><span class="badge authentic">Authentic</span></span>
+                        <span class="td">97.2%</span>
+                        <span class="td actions">
+                            <button class="icon-btn" title="View Details">👁️</button>
+                            <button class="icon-btn" title="Download Report">📥</button>
+                        </span>
+                    </div>
+                    <div class="table-row">
+                        <span class="td file-name">
+                            <span class="file-icon">🎵</span>
+                            urgent_order_audio.mp3
+                        </span>
+                        <span class="td">Jan 24, 2026 • 10:32 AM</span>
+                        <span class="td">0:15</span>
+                        <span class="td"><span class="badge threat">Deepfake</span></span>
+                        <span class="td">89.4%</span>
+                        <span class="td actions">
+                            <button class="icon-btn" title="View Details">👁️</button>
+                            <button class="icon-btn" title="Download Report">📥</button>
+                        </span>
+                    </div>
+                    <div class="table-row">
+                        <span class="td file-name">
+                            <span class="file-icon">🎵</span>
+                            field_report_rec.wav
+                        </span>
+                        <span class="td">Jan 24, 2026 • 09:58 AM</span>
+                        <span class="td">0:23</span>
+                        <span class="td"><span class="badge authentic">Authentic</span></span>
+                        <span class="td">99.1%</span>
+                        <span class="td actions">
+                            <button class="icon-btn" title="View Details">👁️</button>
+                            <button class="icon-btn" title="Download Report">📥</button>
+                        </span>
+                    </div>
+                    <div class="table-row">
+                        <span class="td file-name">
+                            <span class="file-icon">🎵</span>
+                            intel_briefing.m4a
+                        </span>
+                        <span class="td">Jan 24, 2026 • 09:15 AM</span>
+                        <span class="td">1:02</span>
+                        <span class="td"><span class="badge authentic">Authentic</span></span>
+                        <span class="td">95.8%</span>
+                        <span class="td actions">
+                            <button class="icon-btn" title="View Details">👁️</button>
+                            <button class="icon-btn" title="Download Report">📥</button>
+                        </span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-left">
+            <span class="footer-brand">🛡️ Aegis-AI</span>
+            <span class="footer-version">v2.4.1</span>
+        </div>
+        <div class="footer-center">
+            Protecting against AI-generated voice fraud • 100% Offline • Zero Data Leakage
+        </div>
+        <div class="footer-right">
+            <span>© 2026 team-ZerOne</span>
+        </div>
+    </footer>
+</body>
+</html>

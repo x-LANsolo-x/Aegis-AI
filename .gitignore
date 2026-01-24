@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+.env
+
+# Gradio / local artifacts
+*.log
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Media / large artifacts (do not commit)
+*.pptx
+*.wav
+*.mp3
+*.m4a
+*.ogg
+
+# IDE
+.vscode/
+.idea/

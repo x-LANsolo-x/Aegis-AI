@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Image Analysis | Aegis-AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="new-analysis-styles.css">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="nav-brand">
+            <span class="shield-icon">🛡️</span>
+            <span class="brand-text">AEGIS<span class="brand-ai">AI</span></span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Dashboard</a>
+            <a href="history.html" class="nav-link">Analysis History</a>
+            <a href="reports.html" class="nav-link">Reports</a>
+            <a href="result.html" class="nav-link">Settings</a>
+        </div>
+        <div class="nav-right">
+            <div class="status-badge online">
+                <span class="status-dot"></span>
+                <span>Offline Mode Active</span>
+            </div>
+            <div class="user-avatar">
+                <span>CO</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="analysis-page">
+        <!-- Page Header -->
+        <div class="page-header">
+            <a href="image-dashboard.html" class="back-link">← Back to Dashboard</a>
+            <h1 class="page-title">New Image Analysis</h1>
+            <p class="page-subtitle">Upload images for real-time AI manipulation detection</p>
+        </div>
+
+        <!-- Main Upload Area -->
+        <div class="upload-container">
+            <div class="upload-main">
+                <!-- Upload Zone -->
+                <div class="upload-zone" id="dropZone">
+                    <div class="upload-icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="17 8 12 3 7 8"/>
+                            <line x1="12" y1="3" x2="12" y2="15"/>
+                        </svg>
+                    </div>
+                    <h2 class="upload-title">Drop your image file here</h2>
+                    <p class="upload-subtitle">or click to browse from your device</p>
+                    <div class="upload-formats">
+                        <span class="format-tag">JPG</span>
+                        <span class="format-tag">PNG</span>
+                        <span class="format-tag">WEBP</span>
+                        <span class="format-tag">BMP</span>
+                        <span class="format-tag">TIFF</span>
+                    </div>
+                    <p class="upload-limit">Maximum file size: 25MB • Resolution: up to 8K</p>
+                </div>
+
+                <!-- Divider -->
+                <div class="upload-divider">
+                    <span>OR</span>
+                </div>
+
+                <!-- Record Section -->
+                <div class="record-section">
+                    <button class="record-btn" id="recordBtn">
+                        <span class="record-icon">📷</span>
+                        <span class="record-text">Capture from Camera</span>
+                    </button>
+                    <p class="record-hint">Click to capture image from your device camera</p>
+                    
+                    <!-- Recording UI (hidden by default) -->
+                    <div class="recording-ui" style="display: none;">
+                        <div class="recording-indicator">
+                            <span class="rec-dot"></span>
+                            <span class="rec-time">00:00</span>
+                        </div>
+                        <div class="recording-wave">
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                            <div class="wave-bar"></div>
+                        </div>
+                        <button class="stop-btn">⏹ Stop Recording</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Panel -->
+            <div class="settings-panel">
+                <h3 class="panel-title">⚙️ Analysis Settings</h3>
+                
+                <div class="setting-group">
+                    <label class="setting-label">Analysis Mode</label>
+                    <div class="radio-options">
+                        <label class="radio-option selected">
+                            <input type="radio" name="mode" checked>
+                            <span class="radio-mark"></span>
+                            <span class="radio-text">
+                                <strong>Standard</strong>
+                                <small>Fast analysis (~1-2s)</small>
+                            </span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="mode">
+                            <span class="radio-mark"></span>
+                            <span class="radio-text">
+                                <strong>Deep Scan</strong>
+                                <small>Comprehensive (~5-10s)</small>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">Detection Sensitivity</label>
+                    <div class="slider-container">
+                        <input type="range" min="1" max="5" value="3" class="sensitivity-slider">
+                        <div class="slider-labels">
+                            <span>Low</span>
+                            <span>Medium</span>
+                            <span>High</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">Options</label>
+                    <div class="checkbox-options">
+                        <label class="checkbox-option">
+                            <input type="checkbox" checked>
+                            <span class="checkbox-mark"></span>
+                            <span>Generate detailed report</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" checked>
+                            <span class="checkbox-mark"></span>
+                            <span>Save to analysis history</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox">
+                            <span class="checkbox-mark"></span>
+                            <span>Enable real-time preview</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox">
+                            <span class="checkbox-mark"></span>
+                            <span>Extract audio transcript</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <label class="setting-label">Add Tags (Optional)</label>
+                    <input type="text" class="tag-input" placeholder="e.g., urgent, field-report, intel">
+                </div>
+
+                <button class="analyze-btn">
+                    🔍 Start Analysis
+                </button>
+
+                <div class="panel-info">
+                    <div class="info-item">
+                        <span class="info-icon">📴</span>
+                        <span>Analysis runs completely offline</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🔒</span>
+                        <span>Audio never leaves your device</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">⚡</span>
+                        <span>Results in under 2 seconds</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Quick Access -->
+        <div class="recent-section">
+            <h3 class="section-title">📂 Recent Files</h3>
+            <div class="recent-files">
+                <div class="recent-file">
+                    <span class="file-icon">🎵</span>
+                    <div class="file-details">
+                        <span class="file-name">commander_voice_note.wav</span>
+                        <span class="file-time">Analyzed 15 min ago</span>
+                    </div>
+                    <button class="reanalyze-btn">Re-analyze</button>
+                </div>
+                <div class="recent-file">
+                    <span class="file-icon">🎵</span>
+                    <div class="file-details">
+                        <span class="file-name">field_report_recording.wav</span>
+                        <span class="file-time">Analyzed 47 min ago</span>
+                    </div>
+                    <button class="reanalyze-btn">Re-analyze</button>
+                </div>
+                <div class="recent-file">
+                    <span class="file-icon">🎵</span>
+                    <div class="file-details">
+                        <span class="file-name">intel_briefing_jan24.m4a</span>
+                        <span class="file-time">Analyzed 2 hrs ago</span>
+                    </div>
+                    <button class="reanalyze-btn">Re-analyze</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-left">
+            <span class="footer-brand">🛡️ Aegis-AI</span>
+            <span class="footer-version">v2.4.1</span>
+        </div>
+        <div class="footer-center">
+            Protecting against AI-generated voice fraud • 100% Offline • Zero Data Leakage
+        </div>
+        <div class="footer-right">
+            <span>© 2026 team-ZerOne</span>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Upload zone click
+            document.getElementById('dropZone').addEventListener('click', () => {
+                window.location.href = 'image-result.html';
+            });
+            
+            // Record button
+            document.getElementById('recordBtn').addEventListener('click', () => {
+                window.location.href = 'image-result.html';
+            });
+            
+            // Analyze button
+            document.querySelector('.analyze-btn').addEventListener('click', () => {
+                window.location.href = 'image-result.html';
+            });
+            
+            // Recent files
+            document.querySelectorAll('.recent-file, .reanalyze-btn').forEach(el => {
+                el.style.cursor = 'pointer';
+                el.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    window.location.href = 'image-result.html';
+                });
+            });
+            
+            // Nav links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+                    window.location.href = href;
+                });
+            });
+            
+            // Radio and checkbox options
+            document.querySelectorAll('.radio-option, .checkbox-option').forEach(el => {
+                el.addEventListener('click', function() {
+                    if (this.classList.contains('radio-option')) {
+                        document.querySelectorAll('.radio-option').forEach(r => r.classList.remove('selected'));
+                        this.classList.add('selected');
+                    }
+                });
+            });
+            
+            // Status badge and avatar
+            document.querySelector('.status-badge')?.addEventListener('click', () => window.location.href = 'image-result.html');
+            document.querySelector('.user-avatar')?.addEventListener('click', () => window.location.href = 'index.html');
+        });
+    </script>
+</body>
+</html>

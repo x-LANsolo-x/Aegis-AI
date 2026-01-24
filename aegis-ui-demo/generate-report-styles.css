@@ -1,0 +1,402 @@
+/* ============================================
+   AEGIS-AI - Generate Report Page Styles
+   ============================================ */
+
+.generate-page {
+    margin-top: var(--nav-height);
+    padding: 28px 32px 100px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-header { margin-bottom: 28px; }
+
+.back-link {
+    display: inline-block;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.back-link:hover { color: var(--accent-primary); }
+
+.page-title {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.page-subtitle {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* Main Container */
+.generate-container {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 24px;
+}
+
+/* Selection Panel */
+.selection-panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.panel-title {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.select-actions { display: flex; gap: 8px; }
+
+.select-btn {
+    padding: 6px 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 11px;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.select-btn:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.filter-bar {
+    display: flex;
+    gap: 8px;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.filter-select, .search-input {
+    flex: 1;
+    padding: 8px 10px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--text-primary);
+}
+
+.analysis-list {
+    max-height: 450px;
+    overflow-y: auto;
+}
+
+.analysis-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.analysis-item:hover { background: var(--bg-hover); }
+.analysis-item.selected { background: rgba(59, 130, 246, 0.08); }
+.analysis-item.threat { border-left: 3px solid #ef4444; }
+
+.analysis-item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--accent-primary);
+}
+
+.item-badge {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.item-badge.threat { background: rgba(239, 68, 68, 0.15); }
+.item-badge.authentic { background: rgba(16, 185, 129, 0.15); }
+
+.item-info { flex: 1; }
+
+.item-name {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.item-meta {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.selection-summary {
+    padding: 14px 20px;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary-text { font-size: 13px; }
+.summary-detail { font-size: 12px; color: var(--text-muted); }
+
+/* Config Panel */
+.config-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.config-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Report Type Options */
+.report-type-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.type-option {
+    cursor: pointer;
+}
+
+.type-option input { display: none; }
+
+.type-card {
+    padding: 16px;
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.type-option:hover .type-card { border-color: var(--border-light); }
+
+.type-option.selected .type-card {
+    border-color: var(--accent-primary);
+    background: rgba(59, 130, 246, 0.08);
+}
+
+.type-icon { font-size: 28px; display: block; margin-bottom: 8px; }
+.type-name { display: block; font-weight: 600; font-size: 13px; margin-bottom: 4px; }
+.type-desc { font-size: 11px; color: var(--text-muted); }
+
+/* Form Groups */
+.form-group { margin-bottom: 14px; }
+
+.form-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+
+.form-input, .form-select, .form-textarea {
+    width: 100%;
+    padding: 10px 12px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 13px;
+}
+
+.form-textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+}
+
+/* Section Checkboxes */
+.section-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.section-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.section-checkbox input { display: none; }
+
+.section-checkbox .checkbox-mark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border-light);
+    border-radius: 4px;
+    position: relative;
+}
+
+.section-checkbox input:checked + .checkbox-mark {
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+}
+
+.section-checkbox input:checked + .checkbox-mark::after {
+    content: '✓';
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Format Options */
+.format-options {
+    display: flex;
+    gap: 10px;
+}
+
+.format-option {
+    flex: 1;
+    cursor: pointer;
+}
+
+.format-option input { display: none; }
+
+.format-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 14px;
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.format-option:hover { border-color: var(--border-light); }
+
+.format-option.selected {
+    border-color: var(--accent-primary);
+    background: rgba(59, 130, 246, 0.08);
+}
+
+.format-icon { font-size: 20px; }
+
+/* Generate Actions */
+.generate-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.generate-btn {
+    flex: 2;
+    padding: 14px;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.generate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+.preview-btn {
+    flex: 1;
+    padding: 14px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.preview-btn:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.estimate-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.estimate-icon { font-size: 16px; }
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .generate-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .report-type-options {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .report-type-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

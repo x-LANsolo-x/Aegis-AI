@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aegis-AI Video Analysis Report</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="report-styles.css">
+</head>
+<body>
+    <div class="report-container">
+        <!-- Header -->
+        <header class="report-header">
+            <div class="header-left">
+                <div class="logo">🛡️ AEGIS<span>AI</span></div>
+                <div class="report-type">VIDEO FORENSIC ANALYSIS REPORT</div>
+            </div>
+            <div class="header-right">
+                <div class="report-id">Report ID: AGS-2026-0124-4721</div>
+                <div class="classification">CONFIDENTIAL</div>
+            </div>
+        </header>
+
+        <!-- Summary Section -->
+        <section class="summary-section">
+            <div class="verdict-box threat">
+                <div class="verdict-icon">🚨</div>
+                <div class="verdict-content">
+                    <h1>DEEPFAKE DETECTED</h1>
+                    <p>AI-Generated Synthetic Video Identified</p>
+                </div>
+                <div class="verdict-score">
+                    <div class="score-value">94.7%</div>
+                    <div class="score-label">Confidence</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- File Information -->
+        <section class="info-section">
+            <h2 class="section-title">📄 File Information</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">File Name</span>
+                    <span class="info-value">suspicious_video_call.mp4</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">File Size</span>
+                    <span class="info-value">24.7 MB</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Duration</span>
+                    <span class="info-value">00:45.2 seconds</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Resolution</span>
+                    <span class="info-value">1920 x 1080</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Frame Rate</span>
+                    <span class="info-value">30 fps</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Codec</span>
+                    <span class="info-value">H.264</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Format</span>
+                    <span class="info-value">MP4 (MPEG-4)</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">MD5 Hash</span>
+                    <span class="info-value mono">a7f3b2c9d4e5f6...</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analysis Metadata -->
+        <section class="info-section">
+            <h2 class="section-title">🔬 Analysis Metadata</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">Analysis Date</span>
+                    <span class="info-value">January 24, 2026</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Analysis Time</span>
+                    <span class="info-value">10:47:32 IST</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Processing Duration</span>
+                    <span class="info-value">1.24 seconds</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Model Version</span>
+                    <span class="info-value">AegisNet v2.4.1</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Analysis Mode</span>
+                    <span class="info-value">Offline (Local)</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Analyst ID</span>
+                    <span class="info-value">OPR-2847</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Device ID</span>
+                    <span class="info-value">AEGIS-NODE-0047</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Location</span>
+                    <span class="info-value">Field Unit Alpha</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detection Results -->
+        <section class="results-section">
+            <h2 class="section-title">📊 Detection Analysis Results</h2>
+            
+            <div class="result-summary">
+                <p>The submitted video sample has been analyzed using Aegis-AI's multi-layer deep learning detection system. The analysis indicates with <strong>94.7% confidence</strong> that this video is <strong>synthetically generated</strong> using AI-based face swap or deepfake technology.</p>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card bad">
+                    <div class="metric-header">
+                        <span class="metric-icon">🎯</span>
+                        <span class="metric-title">Face Consistency</span>
+                    </div>
+                    <div class="metric-score">-0.89</div>
+                    <div class="metric-bar"><div class="metric-fill" style="width: 89%"></div></div>
+                    <p class="metric-desc">Facial landmark consistency score is 0.43, well below the natural threshold of 0.85. AI-generated faces show inconsistencies in eye, nose, and mouth positioning.</p>
+                </div>
+
+                <div class="metric-card bad">
+                    <div class="metric-header">
+                        <span class="metric-icon">📊</span>
+                        <span class="metric-title">Blinking Patterns</span>
+                    </div>
+                    <div class="metric-score">-0.76</div>
+                    <div class="metric-bar"><div class="metric-fill" style="width: 76%"></div></div>
+                    <p class="metric-desc">Blinking frequency is 2.1 per minute, significantly below natural average of 15-20. Deepfakes often fail to replicate natural blinking patterns.</p>
+                </div>
+
+                <div class="metric-card bad">
+                    <div class="metric-header">
+                        <span class="metric-icon">🔊</span>
+                        <span class="metric-title">Lip Sync Analysis</span>
+                    </div>
+                    <div class="metric-score">-0.92</div>
+                    <div class="metric-bar"><div class="metric-fill" style="width: 92%"></div></div>
+                    <p class="metric-desc">Audio-visual sync correlation is 0.31, indicating mismatch between lip movements and speech. Natural videos show correlation above 0.85.</p>
+                </div>
+
+                <div class="metric-card bad">
+                    <div class="metric-header">
+                        <span class="metric-icon">⚡</span>
+                        <span class="metric-title">Face Boundary</span>
+                    </div>
+                    <div class="metric-score">-0.81</div>
+                    <div class="metric-bar"><div class="metric-fill" style="width: 81%"></div></div>
+                    <p class="metric-desc">Face boundary artifacts detected at hairline and jawline. Blending inconsistencies indicate face swap technology was likely used.</p>
+                </div>
+
+                <div class="metric-card bad">
+                    <div class="metric-header">
+                        <span class="metric-icon">🎭</span>
+                        <span class="metric-title">Lighting Consistency</span>
+                    </div>
+                    <div class="metric-score">-0.73</div>
+                    <div class="metric-bar"><div class="metric-fill" style="width: 73%"></div></div>
+                    <p class="metric-desc">Lighting direction on face differs from background by 23°. Natural videos maintain consistent lighting across all frame elements.</p>
+                </div>
+
+                <div class="metric-card bad">
+                    <div class="metric-header">
+                        <span class="metric-icon">🌊</span>
+                        <span class="metric-title">Motion Artifacts</span>
+                    </div>
+                    <div class="metric-score">-0.88</div>
+                    <div class="metric-bar"><div class="metric-fill" style="width: 88%"></div></div>
+                    <p class="metric-desc">Temporal flickering detected in facial region during head movement. Frame inconsistencies suggest AI-generated content with imperfect coherence.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page Break for Print -->
+        <div class="page-break"></div>
+
+        <!-- Spectrogram Analysis -->
+        <section class="visual-section">
+            <h2 class="section-title">📈 Spectrogram Analysis</h2>
+            <div class="spectrogram-placeholder">
+                <div class="spec-visual">
+                    <div class="spec-grid"></div>
+                    <div class="spec-overlay">Mel Spectrogram Visualization</div>
+                </div>
+                <div class="spec-legend">
+                    <div class="legend-item"><span class="legend-color high"></span> High Energy (Voiced)</div>
+                    <div class="legend-item"><span class="legend-color mid"></span> Medium Energy</div>
+                    <div class="legend-item"><span class="legend-color low"></span> Low Energy (Silence)</div>
+                </div>
+            </div>
+            <div class="visual-notes">
+                <h4>Key Observations:</h4>
+                <ul>
+                    <li>Harmonic bands show unnaturally uniform spacing typical of vocoder-based synthesis</li>
+                    <li>Absence of formant transitions during consonant-vowel boundaries</li>
+                    <li>Missing high-frequency noise components present in natural speech</li>
+                    <li>Spectrogram exhibits "too clean" appearance without natural artifacts</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Waveform Analysis -->
+        <section class="visual-section">
+            <h2 class="section-title">〰️ Waveform Analysis</h2>
+            <div class="waveform-placeholder">
+                <div class="wave-visual"></div>
+            </div>
+            <div class="visual-notes">
+                <h4>Key Observations:</h4>
+                <ul>
+                    <li>Amplitude envelope lacks natural decay patterns</li>
+                    <li>Zero-crossing rate remains abnormally consistent throughout</li>
+                    <li>No visible micro-pauses between phrases</li>
+                    <li>Attack and release characteristics suggest digital synthesis</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- AI System Detection -->
+        <section class="ai-section">
+            <h2 class="section-title">🤖 Probable Generation System</h2>
+            <div class="ai-detection">
+                <p class="ai-intro">Based on visual fingerprint analysis, the video sample exhibits characteristics consistent with the following AI video synthesis technologies:</p>
+                <div class="ai-matches">
+                    <div class="ai-match">
+                        <div class="match-name">Face Swap (DeepFaceLab-type)</div>
+                        <div class="match-score">87% match</div>
+                        <div class="match-bar"><div style="width: 87%"></div></div>
+                    </div>
+                    <div class="ai-match">
+                        <div class="match-name">GAN-based Face Generation</div>
+                        <div class="match-score">73% match</div>
+                        <div class="match-bar"><div style="width: 73%"></div></div>
+                    </div>
+                    <div class="ai-match">
+                        <div class="match-name">Autoencoder Face Swap</div>
+                        <div class="match-score">61% match</div>
+                        <div class="match-bar"><div style="width: 61%"></div></div>
+                    </div>
+                </div>
+                <p class="ai-note">⚠️ Note: Specific commercial system identification requires additional forensic analysis.</p>
+            </div>
+        </section>
+
+        <!-- Recommendations -->
+        <section class="recommendations-section">
+            <h2 class="section-title">⚠️ Security Recommendations</h2>
+            <div class="recommendations-grid">
+                <div class="rec-card critical">
+                    <div class="rec-icon">🚫</div>
+                    <h3>DO NOT TRUST</h3>
+                    <p>Do not act on any commands, instructions, or information contained in this audio without secondary verification.</p>
+                </div>
+                <div class="rec-card high">
+                    <div class="rec-icon">📞</div>
+                    <h3>VERIFY SOURCE</h3>
+                    <p>Contact the purported speaker through a known, secure channel to confirm authenticity.</p>
+                </div>
+                <div class="rec-card high">
+                    <div class="rec-icon">📝</div>
+                    <h3>DOCUMENT & REPORT</h3>
+                    <p>Preserve this audio file and report the incident to your security officer immediately.</p>
+                </div>
+                <div class="rec-card medium">
+                    <div class="rec-icon">🔍</div>
+                    <h3>INVESTIGATE SOURCE</h3>
+                    <p>Trace the origin of this audio file. Identify how it was received and by whom.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chain of Custody -->
+        <section class="custody-section">
+            <h2 class="section-title">🔗 Chain of Custody</h2>
+            <div class="custody-timeline">
+                <div class="custody-item">
+                    <div class="custody-time">10:45:18</div>
+                    <div class="custody-event">
+                        <strong>File Received</strong>
+                        <span>Audio file uploaded to Aegis-AI system</span>
+                    </div>
+                </div>
+                <div class="custody-item">
+                    <div class="custody-time">10:45:19</div>
+                    <div class="custody-event">
+                        <strong>Hash Generated</strong>
+                        <span>MD5: a7f3b2c9d4e5f6... | SHA-256: 8d2e4f...</span>
+                    </div>
+                </div>
+                <div class="custody-item">
+                    <div class="custody-time">10:45:20</div>
+                    <div class="custody-event">
+                        <strong>Analysis Initiated</strong>
+                        <span>Multi-layer deep learning analysis started</span>
+                    </div>
+                </div>
+                <div class="custody-item">
+                    <div class="custody-time">10:47:32</div>
+                    <div class="custody-event">
+                        <strong>Analysis Complete</strong>
+                        <span>Threat detected with 94.7% confidence</span>
+                    </div>
+                </div>
+                <div class="custody-item">
+                    <div class="custody-time">10:47:33</div>
+                    <div class="custody-event">
+                        <strong>Report Generated</strong>
+                        <span>This forensic report was generated</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="report-footer">
+            <div class="footer-disclaimer">
+                <strong>DISCLAIMER:</strong> This report is generated by Aegis-AI automated deepfake detection system. While the system achieves high accuracy, results should be used as one factor in a comprehensive security assessment. False positives and negatives are possible. This report is intended for authorized personnel only.
+            </div>
+            <div class="footer-info">
+                <div class="footer-col">
+                    <strong>Generated By</strong>
+                    <span>Aegis-AI v2.4.1</span>
+                </div>
+                <div class="footer-col">
+                    <strong>Report Date</strong>
+                    <span>January 24, 2026</span>
+                </div>
+                <div class="footer-col">
+                    <strong>Classification</strong>
+                    <span>CONFIDENTIAL</span>
+                </div>
+            </div>
+            <div class="footer-brand">
+                🛡️ AEGIS-AI | Protecting Against AI-Generated Voice Fraud
+                <br>
+                <small>© 2026 team-ZerOne | SnowHack IPEC</small>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        // Make ALL elements interactive
+        document.addEventListener('DOMContentLoaded', function() {
+            // Logo click - back to dashboard
+            document.querySelector('.logo')?.addEventListener('click', () => window.location.href = 'index.html');
+            document.querySelector('.logo').style.cursor = 'pointer';
+            
+            // Verdict box - go to result
+            document.querySelector('.verdict-box')?.addEventListener('click', () => window.location.href = 'result.html');
+            document.querySelector('.verdict-box').style.cursor = 'pointer';
+            
+            // All info items clickable
+            document.querySelectorAll('.info-item').forEach(el => {
+                el.style.cursor = 'pointer';
+                el.addEventListener('click', () => window.location.href = 'result.html');
+            });
+            
+            // Metric cards
+            document.querySelectorAll('.metric-card').forEach(el => {
+                el.style.cursor = 'pointer';
+                el.addEventListener('click', () => window.location.href = 'result.html');
+            });
+            
+            // AI matches
+            document.querySelectorAll('.ai-match').forEach(el => {
+                el.style.cursor = 'pointer';
+                el.addEventListener('click', () => window.location.href = 'result.html');
+            });
+            
+            // Recommendation cards
+            document.querySelectorAll('.rec-card').forEach(el => {
+                el.style.cursor = 'pointer';
+                el.addEventListener('click', () => window.location.href = 'result.html');
+            });
+            
+            // Custody items
+            document.querySelectorAll('.custody-item').forEach(el => {
+                el.style.cursor = 'pointer';
+                el.addEventListener('click', () => window.location.href = 'result.html');
+            });
+            
+            // Visual sections
+            document.querySelectorAll('.spectrogram-placeholder, .waveform-placeholder').forEach(el => {
+                el.style.cursor = 'pointer';
+                el.addEventListener('click', () => window.location.href = 'result.html');
+            });
+            
+            // Footer brand
+            document.querySelector('.footer-brand')?.addEventListener('click', () => window.location.href = 'index.html');
+            document.querySelector('.footer-brand').style.cursor = 'pointer';
+            
+            // Section titles
+            document.querySelectorAll('.section-title').forEach(el => {
+                el.style.cursor = 'pointer';
+                el.addEventListener('click', () => window.location.href = 'result.html');
+            });
+            
+            // Classification badge
+            document.querySelector('.classification')?.addEventListener('click', () => window.location.href = 'result.html');
+            document.querySelector('.classification').style.cursor = 'pointer';
+        });
+    </script>
+</body>
+</html>
