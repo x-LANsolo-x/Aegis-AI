@@ -1,0 +1,100 @@
+# Video Deepfake Detection Training Configuration
+
+# ============================================================================
+# Quick Test Configuration
+# ============================================================================
+quick_test:
+  data_dir: "data/synthetic"
+  dataset_type: "frames"
+  model: "lightweight"
+  image_size: 224
+  batch_size: 16
+  epochs: 5
+  lr: 0.001
+  num_workers: 2
+  output_dir: "models/video/test"
+  model_version: "V0.1.0-test"
+
+# ============================================================================
+# Development Configuration (Lightweight Model)
+# ============================================================================
+dev_lightweight:
+  data_dir: "data/FaceForensics++"
+  dataset_type: "faceforensics"
+  model: "lightweight"
+  image_size: 224
+  dropout: 0.5
+  batch_size: 32
+  epochs: 30
+  lr: 0.0001
+  weight_decay: 0.00001
+  num_workers: 4
+  output_dir: "models/video/dev"
+  model_version: "V1.0.0-lightweight"
+  seed: 42
+
+# ============================================================================
+# Production Configuration (Xception Model)
+# ============================================================================
+production_xception:
+  data_dir: "data/FaceForensics++"
+  dataset_type: "faceforensics"
+  model: "xception"
+  image_size: 299
+  dropout: 0.5
+  batch_size: 16  # Xception requires more memory
+  epochs: 50
+  lr: 0.0001
+  weight_decay: 0.00001
+  num_workers: 4
+  output_dir: "models/video/production"
+  model_version: "V1.0.0-xception"
+  seed: 42
+
+# ============================================================================
+# Celeb-DF Configuration
+# ============================================================================
+celebdf:
+  data_dir: "data/Celeb-DF"
+  dataset_type: "frames"  # Assuming pre-extracted frames
+  model: "xception"
+  image_size: 299
+  dropout: 0.5
+  batch_size: 16
+  epochs: 50
+  lr: 0.0001
+  weight_decay: 0.00001
+  num_workers: 4
+  output_dir: "models/video/celebdf"
+  model_version: "V1.0.0-celebdf"
+  seed: 42
+
+# ============================================================================
+# Fine-tuning Configuration
+# ============================================================================
+finetune:
+  data_dir: "data/custom"
+  dataset_type: "frames"
+  model: "xception"
+  image_size: 299
+  dropout: 0.3  # Lower dropout for fine-tuning
+  batch_size: 8
+  epochs: 10
+  lr: 0.00001  # Lower learning rate for fine-tuning
+  weight_decay: 0.00001
+  num_workers: 2
+  output_dir: "models/video/finetuned"
+  model_version: "V1.1.0-finetuned"
+  pretrained: true  # Load pretrained weights
+  seed: 42
+
+# ============================================================================
+# Notes
+# ============================================================================
+# Usage:
+#   python ml/training/train_video.py @ml/training/config/video_training_config.yaml::production_xception
+#
+# Or load manually in Python:
+#   import yaml
+#   with open("ml/training/config/video_training_config.yaml") as f:
+#       config = yaml.safe_load(f)["production_xception"]

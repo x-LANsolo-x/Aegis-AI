@@ -3,3 +3,7 @@ uvicorn[standard]
 pytest
 httpx
 sqlmodel
+onnxruntime
+numpy
+soundfile
+scipy

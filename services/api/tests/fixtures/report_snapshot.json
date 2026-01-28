@@ -1,0 +1,24 @@
+{
+  "report_version": "1.0",
+  "analysis_id": "11111111-1111-1111-1111-111111111111",
+  "evidence": {
+    "filename": "a.wav",
+    "sha256": "h",
+    "media_type": "audio",
+    "size_bytes": 3
+  },
+  "verdict": "SUSPICIOUS",
+  "confidence": 0.7,
+  "key_findings": [
+    "x"
+  ],
+  "recommended_actions": [
+    "Verify via secondary trusted channel"
+  ],
+  "chain_of_custody": {
+    "created_at": "2026-01-01T00:00:00",
+    "device_id": null
+  },
+  "frame_analyses": null,
+  "video_metadata": null
+}

@@ -97,6 +97,67 @@ We plan to integrate the **RunAnywhere SDK** to enable:
 
 ---
 
+## Model Deployment (ONNX Inference)
+
+The backend supports **ONNX Runtime** for production inference.
+
+### Model Placement
+
+Place your trained ONNX model in:
+```
+models/audio/latest.onnx
+```
+
+Or use versioned models:
+```
+models/audio/V1.0.0.onnx
+models/audio/V1.1.0.onnx
+```
+
+### Environment Configuration
+
+Set the model path via environment variable:
+```bash
+export ONNX_MODEL_PATH=models/audio/latest.onnx
+```
+
+Optional: require model at startup (fail-fast if missing):
+```bash
+export REQUIRE_MODEL=true
+```
+
+### Required Input Format
+
+The model must accept **16kHz mono audio**:
+- Sample rate: **16,000 Hz**
+- Channels: **mono** (1 channel)
+- Format: float32 waveform in range [-1, 1]
+- Input shape: `(1, samples)` or as specified by your model
+
+The backend automatically:
+- converts stereo → mono
+- normalizes amplitude to [-1, 1]
+- resamples to target rate (if preprocessing helpers are used)
+
+### Check Loaded Model
+
+Query the currently loaded model:
+```bash
+curl http://localhost:8000/v1/models
+```
+
+Response:
+```json
+{
+  "audio": {
+    "current": "V1.0.0",
+    "path": "models/audio/latest.onnx"
+  }
+}
+```
+
+---
+
 ## Roadmap (Next Development Phase)
 
 Planned additions and upgrades:
