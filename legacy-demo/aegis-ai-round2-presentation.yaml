@@ -1,0 +1,691 @@
+# ============================================================================
+#                    AEGIS-AI: ROUND 2 PRESENTATION GUIDE
+#                         5-6 Minute Killer Presentation
+#                              team-ZerOne | SnowHack IPEC
+# ============================================================================
+# Total Time: 5-6 minutes
+# Goal: Make judges believe Aegis-AI is the ONLY solution they should back
+# ============================================================================
+
+presentation_metadata:
+  team_name: "team-ZerOne"
+  project_name: "Aegis-AI"
+  tagline: "Real-Time Deepfake Detection. Offline. Explainable. Unstoppable."
+  event: "SnowHack IPEC - Round 2"
+  duration: "5-6 minutes"
+  
+# ============================================================================
+#                           PRESENTATION STRUCTURE
+# ============================================================================
+
+presentation_flow:
+  
+  # ==========================================================================
+  # SECTION 1: THE HOOK (45 seconds)
+  # Purpose: Grab attention immediately with a real-world crisis scenario
+  # ==========================================================================
+  section_1_the_hook:
+    duration: "45 seconds"
+    title: "The $25 Million Wake-Up Call"
+    
+    opening_statement: |
+      "In February 2024, a finance worker in Hong Kong transferred $25.6 MILLION 
+      to criminals. Why? He attended a video call where his CFO and colleagues 
+      instructed him to do so. Every person on that call was a deepfake. 
+      AI-generated. Fake. And completely convincing."
+    
+    escalation_points:
+      - point: "This is not science fiction. This happened 11 months ago."
+      - point: "Voice cloning now takes 3 seconds of audio. Three. Seconds."
+      - point: "95% of deepfakes are undetectable by humans."
+      - point: "By 2027, AI-generated fraud will cost $40 BILLION annually."
+    
+    the_real_problem: |
+      "But here's what keeps security experts awake at night: What happens when 
+      a deepfaked military commander issues an order? When a fake emergency 
+      broadcast causes panic? When a cloned voice authorizes a nuclear facility 
+      access? In those moments, you have SECONDS to verify. No internet. 
+      No cloud. No time. What do you do?"
+    
+    transition: |
+      "We built the answer. This is Aegis-AI."
+    
+    delivery_tips:
+      - "Pause after '$25.6 MILLION' for impact"
+      - "Make eye contact when saying 'Every person on that call was a deepfake'"
+      - "Lower voice for 'What do you do?' - create tension"
+      - "Strong, confident voice for 'This is Aegis-AI'"
+
+  # ==========================================================================
+  # SECTION 2: THE SOLUTION (60 seconds)
+  # Purpose: Introduce Aegis-AI as the definitive answer
+  # ==========================================================================
+  section_2_the_solution:
+    duration: "60 seconds"
+    title: "Aegis-AI: Your Digital Truth Shield"
+    
+    one_liner: |
+      "Aegis-AI is the world's first OFFLINE-FIRST, REAL-TIME deepfake 
+      detection system designed for environments where failure is not an option."
+    
+    what_it_does:
+      simple_explanation: |
+        "Upload or record any audio, video, or image. In under 2 seconds, 
+        Aegis-AI tells you: Is this REAL or is this FAKE? With confidence 
+        scores, forensic evidence, and actionable recommendations."
+      
+      key_differentiators:
+        - differentiator: "100% OFFLINE"
+          explanation: "Works in bunkers, submarines, disaster zones, classified facilities. No internet required. Ever."
+          
+        - differentiator: "REAL-TIME"
+          explanation: "Sub-2-second analysis. Because in a crisis, you don't have minutes."
+          
+        - differentiator: "EXPLAINABLE"
+          explanation: "We don't just say 'fake' - we show you WHY. Spectral anomalies, pitch inconsistencies, vocoder traces. Evidence you can trust."
+          
+        - differentiator: "PRIVACY-FIRST"
+          explanation: "Your media NEVER leaves your device. Zero data exfiltration. Zero cloud dependency. Zero trust issues."
+          
+        - differentiator: "FORENSICS-READY"
+          explanation: "Chain-of-custody logs, evidence hashes, court-admissible reports. Built for investigations, not just detection."
+    
+    target_users:
+      - "Military and Defense Operations"
+      - "Law Enforcement Agencies"
+      - "Emergency Response Teams"
+      - "Financial Institutions"
+      - "Corporate Security"
+      - "Journalism and Media Verification"
+    
+    transition: |
+      "Let me show you exactly how this works."
+
+  # ==========================================================================
+  # SECTION 3: LIVE DEMO (90-120 seconds)
+  # Purpose: Prove it works with live demonstration
+  # ==========================================================================
+  section_3_live_demo:
+    duration: "90-120 seconds"
+    title: "Live Demo: See Aegis-AI in Action"
+    
+    demo_script:
+      
+      setup: |
+        "I'm going to show you two scenarios. First, a SYNTHETIC audio - 
+        something that could be a cloned voice. Then, an AUTHENTIC recording."
+      
+      demo_1_fake_audio:
+        action: "Upload audio2.wav or audio4.wav (synthetic)"
+        narration: |
+          "This is a synthetic voice sample. Watch what happens..."
+          [Wait for analysis - ~1 second]
+          "SYNTHETIC DETECTED. 94% confidence. Look at these indicators:
+           - Pitch variation is unnaturally consistent - machines don't breathe
+           - Spectral artifacts showing vocoder signatures
+           - Missing micro-variations that human speech naturally has
+           - The system even generates a forensic report with evidence hashes"
+        
+        key_points_to_highlight:
+          - "The confidence score and what it means"
+          - "The multi-signal breakdown (hover over indicators)"
+          - "The spectrogram visualization showing anomalies"
+          - "Chain-of-custody timeline for investigations"
+          - "Recommended actions section"
+      
+      demo_2_real_audio:
+        action: "Upload audio1.wav or audio3.wav (authentic)"
+        narration: |
+          "Now let's try an authentic human recording..."
+          [Wait for analysis]
+          "AUTHENTIC. 96% confidence. Notice the difference:
+           - Natural pitch variation with breathing patterns
+           - Clean spectral profile without synthesis artifacts
+           - Micro-tremors and hesitations that AI can't replicate
+           - This is a real human voice."
+        
+        key_points_to_highlight:
+          - "How quickly it processed (sub-2 seconds)"
+          - "The detailed breakdown showing why it's authentic"
+          - "The exportable forensic report"
+      
+      ui_showcase:
+        action: "Briefly show the UI prototype"
+        narration: |
+          "And this is our full product vision - supporting Audio, Video, 
+          and Image analysis. Batch processing for multiple files. 
+          Complete analysis history. Professional forensic reports 
+          ready for export and legal proceedings."
+        
+        pages_to_show:
+          - "Dashboard with mode tabs"
+          - "History view"
+          - "Full forensic report (scroll through)"
+    
+    demo_tips:
+      - "Practice the demo 10+ times before presenting"
+      - "Have backup audio files ready"
+      - "If demo fails, have screenshots as backup"
+      - "Keep talking while processing - explain what's happening"
+      - "Show enthusiasm when results appear"
+
+  # ==========================================================================
+  # SECTION 4: TECHNICAL CREDIBILITY (60 seconds)
+  # Purpose: Prove you understand the deep technology
+  # ==========================================================================
+  section_4_technical_depth:
+    duration: "60 seconds"
+    title: "The Science Behind the Shield"
+    
+    opening: |
+      "This isn't a prototype held together with duct tape. Let me show you 
+      the engineering that makes Aegis-AI bulletproof."
+    
+    detection_methodology:
+      title: "Multi-Signal Ensemble Detection"
+      explanation: |
+        "We don't rely on a single detector that attackers can fool. 
+        Aegis-AI uses an ENSEMBLE of 6+ independent detection signals:"
+      
+      signals:
+        - signal: "Pitch Trajectory Analysis"
+          detail: "Human pitch varies 20-40Hz naturally. Synthesizers show unnatural consistency or impossible transitions."
+          
+        - signal: "Spectral Artifact Detection"
+          detail: "Neural vocoders leave fingerprints - harmonic distortions, phase discontinuities, frequency band anomalies."
+          
+        - signal: "Temporal Consistency"
+          detail: "AI generates frame-by-frame. Humans have continuous micro-variations. We detect the difference."
+          
+        - signal: "Breathing & Silence Analysis"
+          detail: "Humans breathe. AI doesn't. We analyze silence segments for biological signatures."
+          
+        - signal: "Formant Naturalness"
+          detail: "Human vocal tract creates specific resonance patterns. Synthesis deviates from anatomical constraints."
+          
+        - signal: "Microstructure Analysis"
+          detail: "Jitter, shimmer, and harmonic-to-noise ratio - biological markers impossible to perfectly synthesize."
+    
+    architecture:
+      title: "Edge-First Architecture"
+      components:
+        - component: "On-Device Inference"
+          tech: "Quantized models (INT8), ONNX Runtime / TensorFlow Lite"
+          benefit: "Fast inference on any device without cloud dependency"
+          
+        - component: "RunAnywhere SDK Integration"
+          tech: "Cross-platform model deployment"
+          benefit: "Same models run on iOS, Android, Windows, Linux, embedded"
+          
+        - component: "Agentic Explanation Layer"
+          tech: "Local LLM (SmolLM2-360M via llama.cpp)"
+          benefit: "Human-readable explanations generated entirely on-device"
+          
+        - component: "Secure Forensics Pipeline"
+          tech: "SHA-256 hashing, encrypted local storage"
+          benefit: "Evidence integrity for legal proceedings"
+    
+    metrics_we_target:
+      - metric: "Equal Error Rate (EER)"
+        target: "< 5%"
+        explanation: "Industry standard for biometric systems"
+        
+      - metric: "ROC-AUC"
+        target: "> 0.95"
+        explanation: "Excellent discrimination between real and fake"
+        
+      - metric: "Inference Latency"
+        target: "< 2 seconds"
+        explanation: "Real-time usability requirement"
+        
+      - metric: "Model Size"
+        target: "< 50MB"
+        explanation: "Deployable on resource-constrained devices"
+    
+    training_approach:
+      datasets:
+        - "ASVspoof 2019/2021 (audio anti-spoofing)"
+        - "FakeAVCeleb (video deepfakes)"
+        - "DFDC (Facebook Deepfake Detection Challenge)"
+        - "In-the-wild adversarial samples"
+      
+      continuous_improvement: |
+        "Optional federated learning allows model updates without 
+        sharing raw media - privacy preserved, accuracy improved."
+
+  # ==========================================================================
+  # SECTION 5: MARKET & BUSINESS (45 seconds)
+  # Purpose: Show this is a viable, fundable product
+  # ==========================================================================
+  section_5_market_business:
+    duration: "45 seconds"
+    title: "The $40 Billion Opportunity"
+    
+    market_size:
+      tam: "$40B+ AI fraud losses by 2027 (Deloitte)"
+      sam: "$8.5B deepfake detection market by 2030"
+      growth: "41.5% CAGR - one of fastest growing security segments"
+    
+    why_now:
+      - "Voice cloning cost dropped 99% in 2 years"
+      - "Real-time deepfakes now possible on consumer hardware"
+      - "Regulatory pressure mounting (EU AI Act, US DEFIANCE Act)"
+      - "Zero mainstream offline-first solutions exist"
+    
+    competitive_landscape:
+      our_advantage: |
+        "Every competitor requires cloud connectivity. Microsoft, 
+        Pindrop, Resemble AI - all cloud-dependent. We're the ONLY 
+        solution that works when the internet doesn't."
+      
+      comparison:
+        - competitor: "Cloud Solutions (Microsoft, AWS)"
+          weakness: "Requires internet, data leaves device, latency issues"
+          our_advantage: "100% offline, zero data exfiltration"
+          
+        - competitor: "Academic Tools"
+          weakness: "Not production-ready, single-signal detection"
+          our_advantage: "Production UI, multi-signal ensemble"
+          
+        - competitor: "Enterprise Solutions"
+          weakness: "Expensive, complex integration, cloud-locked"
+          our_advantage: "Edge-deployable, simple integration, affordable"
+    
+    business_model:
+      revenue_streams:
+        - stream: "Per-Device Licensing"
+          target: "Government & Defense"
+          pricing: "$500-2000/device/year"
+          
+        - stream: "Enterprise Subscription"
+          target: "Financial Institutions, Media"
+          pricing: "$10K-100K/year based on scale"
+          
+        - stream: "API Access"
+          target: "Developers, Integrators"
+          pricing: "Usage-based pricing"
+      
+      go_to_market:
+        - "Phase 1: Pilot with defense/law enforcement agencies"
+        - "Phase 2: Enterprise security partnerships"
+        - "Phase 3: Consumer mobile app"
+
+  # ==========================================================================
+  # SECTION 6: THE CLOSE (30-45 seconds)
+  # Purpose: Memorable ending that demands selection
+  # ==========================================================================
+  section_6_the_close:
+    duration: "30-45 seconds"
+    title: "The Unrejectable Choice"
+    
+    summary_punch:
+      line_1: "In a world where anyone's voice can be cloned in 3 seconds..."
+      line_2: "Where a single deepfake can cost $25 million or trigger a crisis..."
+      line_3: "Where decisions must be made in seconds, offline, under pressure..."
+      line_4: "Aegis-AI is not just a product. It's a NECESSITY."
+    
+    what_we_built:
+      - "✓ Complete UI prototype showing full product vision"
+      - "✓ Working localhost demo with real-time detection"
+      - "✓ Multi-signal forensic analysis"
+      - "✓ Privacy-first, offline-first architecture"
+      - "✓ Court-ready forensic reporting"
+      - "✓ Clear path to production deployment"
+    
+    call_to_action: |
+      "We built Aegis-AI in [X] hours. Imagine what we build in [X] months. 
+      The deepfake threat isn't coming - it's HERE. And now, so is the solution.
+      
+      We are team-ZerOne. This is Aegis-AI. 
+      Thank you."
+    
+    final_slide_elements:
+      - "Team photo or names"
+      - "Aegis-AI logo"
+      - "Contact information"
+      - "QR code to demo (optional)"
+    
+    delivery_tips:
+      - "Slow down for the final lines"
+      - "Make eye contact with each judge"
+      - "End with confident silence - don't trail off"
+      - "Smile and nod slightly after 'Thank you'"
+
+# ============================================================================
+#                         POWERFUL TALKING POINTS
+# ============================================================================
+
+killer_talking_points:
+  
+  for_technical_judges:
+    - point: "Ensemble detection prevents single-point-of-failure attacks"
+    - point: "Quantized models enable edge deployment without accuracy loss"
+    - point: "Our architecture supports continuous model updates via federated learning"
+    - point: "SHA-256 evidence hashing ensures forensic integrity"
+    - point: "Sub-2-second inference on consumer hardware"
+  
+  for_business_judges:
+    - point: "$40B problem with no offline solution - we're first to market"
+    - point: "Defense and government procurement is relationship-based - we start pilots"
+    - point: "Per-device licensing creates predictable recurring revenue"
+    - point: "Regulatory tailwinds with AI safety legislation globally"
+  
+  for_impact_judges:
+    - point: "Protecting democratic processes from synthetic media manipulation"
+    - point: "Enabling journalists to verify sources in hostile environments"
+    - point: "Protecting families from voice-clone scams targeting elderly"
+    - point: "Supporting law enforcement in evidence verification"
+  
+  for_innovation_judges:
+    - point: "First offline-first deepfake detection system"
+    - point: "Agentic AI explanations - not just detection, understanding"
+    - point: "Forensics-ready by design - built for legal proceedings"
+    - point: "Privacy-preserving architecture - zero data exfiltration"
+
+# ============================================================================
+#                     ANTICIPATED Q&A (WITH KILLER ANSWERS)
+# ============================================================================
+
+anticipated_questions:
+  
+  technical_questions:
+    
+    - question: "How accurate is your detection?"
+      answer: |
+        "Our architecture targets <5% Equal Error Rate, which is the industry 
+        standard for biometric systems. More importantly, we use ensemble 
+        detection - 6+ independent signals that would ALL need to be fooled 
+        simultaneously. No single-point-of-failure."
+      confidence_booster: "We can discuss the specific signals if you'd like to go deeper."
+    
+    - question: "Can attackers bypass your detection?"
+      answer: |
+        "Security is a cat-and-mouse game - we don't claim perfection. But 
+        our multi-signal approach means attackers must fool spectrogram analysis, 
+        pitch tracking, temporal consistency, AND biological markers simultaneously. 
+        That's exponentially harder than fooling a single detector. Plus, our 
+        federated learning enables continuous model updates without compromising 
+        user privacy."
+      confidence_booster: "We've designed for adversarial robustness from day one."
+    
+    - question: "Why not just use cloud-based solutions?"
+      answer: |
+        "Three reasons: First, AVAILABILITY - military operations, disaster 
+        response, remote locations have no internet. Second, LATENCY - cloud 
+        round-trips add seconds when you need milliseconds. Third, PRIVACY - 
+        sensitive audio of commanders, witnesses, or classified briefings 
+        cannot leave the device. Period."
+      confidence_booster: "Offline-first isn't a limitation - it's our core innovation."
+    
+    - question: "How do you handle noisy audio or low-quality recordings?"
+      answer: |
+        "Great question. We use Voice Activity Detection to isolate speech, 
+        robust feature extraction that's noise-tolerant, and confidence 
+        thresholding. If quality is too low for reliable detection, we 
+        explicitly say so and recommend re-capture. Honest uncertainty is 
+        better than false confidence."
+    
+    - question: "What's your model architecture?"
+      answer: |
+        "For audio: CNN-based spectrogram analysis combined with hand-crafted 
+        acoustic features (pitch, MFCC, formants). For video: ResNet50 backbone 
+        with temporal LSTM and facial landmark analysis. All models are 
+        quantized to INT8 for edge deployment with minimal accuracy loss."
+    
+    - question: "How do you train without massive datasets?"
+      answer: |
+        "We leverage existing research datasets: ASVspoof for audio spoofing, 
+        FakeAVCeleb and DFDC for video deepfakes. Transfer learning from 
+        pre-trained models reduces data requirements. And our federated 
+        learning approach allows continuous improvement from real-world 
+        deployment without centralizing sensitive data."
+  
+  business_questions:
+    
+    - question: "Who are your competitors?"
+      answer: |
+        "Microsoft, Pindrop, Resemble AI, and several startups offer deepfake 
+        detection. But EVERY single one requires cloud connectivity. We're 
+        the only solution that works offline, on-device, with zero data 
+        exfiltration. For defense, law enforcement, and high-security 
+        enterprise - that's not a feature, it's a requirement."
+    
+    - question: "How will you make money?"
+      answer: |
+        "Three revenue streams: Per-device licensing for government/defense 
+        at $500-2000/device/year. Enterprise subscriptions for financial 
+        institutions and media companies at $10K-100K/year. And API access 
+        for developers. Our initial focus is defense pilots - that's where 
+        the pain is acute and budgets exist."
+    
+    - question: "What's your go-to-market strategy?"
+      answer: |
+        "Land-and-expand with defense and law enforcement. We start with 
+        pilot programs - prove value in controlled deployments. Success 
+        stories become case studies for enterprise sales. The defense sector 
+        is relationship-driven, so we're building those connections now."
+    
+    - question: "How big is this market?"
+      answer: |
+        "AI-generated fraud will cost $40 billion annually by 2027 according 
+        to Deloitte. The deepfake detection market specifically is projected 
+        at $8.5 billion by 2030 with 41.5% CAGR. And we're targeting the 
+        segment with the highest willingness to pay: defense and high-security 
+        enterprise."
+  
+  product_questions:
+    
+    - question: "Is this just a demo or a real product?"
+      answer: |
+        "Today, you're seeing a functional localhost demo and a complete UI 
+        prototype. The detection logic works. The forensic reporting works. 
+        What we need next is: full model training on production datasets, 
+        mobile deployment optimization, and pilot program partnerships. 
+        The architecture is production-ready - we need resources to scale."
+    
+    - question: "How long until this is production-ready?"
+      answer: |
+        "With dedicated focus: 3-4 months for audio detection MVP with full 
+        model training. 6 months for video integration. 9 months for 
+        enterprise-ready deployment with all three media types. We've 
+        de-risked the architecture - now it's execution."
+    
+    - question: "Why should we believe you can build this?"
+      answer: |
+        "Look at what we built in [X] hours: Working detection demo, complete 
+        UI prototype, forensic reporting, multi-signal analysis architecture. 
+        We understand the ML problem, the deployment constraints, and the 
+        user needs. We're not promising magic - we're showing progress."
+  
+  challenging_questions:
+    
+    - question: "What if deepfakes get too good to detect?"
+      answer: |
+        "Two responses: First, detection and generation are in an arms race, 
+        but detection has inherent advantages - we can analyze at the signal 
+        level while generators must fool multiple independent signals. Second, 
+        even if detection becomes probabilistic, providing confidence scores 
+        and evidence is still valuable. 'This might be fake, here's why' is 
+        better than no information at all."
+    
+    - question: "Why would someone trust an AI to detect AI?"
+      answer: |
+        "That's exactly why we built EXPLAINABLE detection. We don't just 
+        output 'fake' - we show the evidence. Spectral anomalies you can see. 
+        Pitch patterns you can verify. The user makes the final decision; 
+        we provide the analysis. Trust through transparency."
+    
+    - question: "Isn't offline-only a limitation?"
+      answer: |
+        "For our target users, it's the opposite - it's a requirement. A 
+        soldier in the field, a disaster responder, an air-gapped government 
+        system - they CAN'T use cloud solutions. We're not offline because 
+        we couldn't build cloud. We're offline because that's what the 
+        mission demands."
+
+# ============================================================================
+#                          DEMO PREPARATION CHECKLIST
+# ============================================================================
+
+demo_checklist:
+  
+  before_presentation:
+    technical_setup:
+      - item: "Test Gradio demo launches correctly"
+        command: "py model-demo/aegis_demo.py"
+        verify: "Opens at http://127.0.0.1:7860"
+        
+      - item: "Prepare audio files"
+        files:
+          - "audio1.wav (authentic) - ready for upload"
+          - "audio2.wav (synthetic) - ready for upload"
+        location: "Desktop or easily accessible folder"
+        
+      - item: "Test UI prototype in browser"
+        files:
+          - "aegis-ui-demo/index.html"
+          - "aegis-ui-demo/report.html"
+        verify: "All pages load, navigation works"
+        
+      - item: "Close unnecessary applications"
+        why: "Prevent notifications, reduce distractions"
+        
+      - item: "Set browser to fullscreen/presentation mode"
+        why: "Clean, professional appearance"
+    
+    backup_plans:
+      - scenario: "Demo crashes"
+        backup: "Have screenshots of successful runs ready"
+        
+      - scenario: "Audio files missing"
+        backup: "Have copies in multiple locations (USB, cloud, email to self)"
+        
+      - scenario: "Browser issues"
+        backup: "Have demo ready in multiple browsers (Chrome, Firefox)"
+        
+      - scenario: "Gradio fails to launch"
+        backup: "Have screen recording of successful demo"
+  
+  demo_flow_practice:
+    - step: "Open Gradio demo (already running)"
+    - step: "Introduce what you're about to show"
+    - step: "Upload synthetic audio (audio2.wav)"
+    - step: "While processing, explain what's happening"
+    - step: "Walk through the results - highlight key indicators"
+    - step: "Upload authentic audio (audio1.wav)"
+    - step: "Compare the differences"
+    - step: "Switch to UI prototype"
+    - step: "Quick tour: Dashboard → History → Report"
+    - step: "End on forensic report page"
+
+# ============================================================================
+#                         PRESENTATION TIPS
+# ============================================================================
+
+presentation_tips:
+  
+  delivery:
+    - tip: "Start STRONG - your opening line sets the tone"
+    - tip: "Speak slower than feels natural - nerves speed you up"
+    - tip: "Pause after key points - let them land"
+    - tip: "Make eye contact with judges, not the screen"
+    - tip: "Use hand gestures purposefully, not nervously"
+    - tip: "If you make a mistake, don't apologize - move forward"
+    - tip: "End with confidence - no trailing off"
+  
+  content:
+    - tip: "Numbers are memorable - use specific statistics"
+    - tip: "Stories beat features - the Hong Kong story is powerful"
+    - tip: "Show, don't tell - the demo is your proof"
+    - tip: "Anticipate objections - address them before they're raised"
+    - tip: "Simplify for non-technical judges, but have depth ready"
+  
+  q_and_a:
+    - tip: "Listen to the FULL question before answering"
+    - tip: "It's okay to say 'Great question' while you think"
+    - tip: "If you don't know, say 'I don't have that data, but here's how I'd find out'"
+    - tip: "Bridge to your strengths when possible"
+    - tip: "Keep answers concise - 30-60 seconds max"
+  
+  team_coordination:
+    - tip: "Decide who presents which section"
+    - tip: "Practice handoffs to be smooth"
+    - tip: "Have one person manage the demo"
+    - tip: "Designate who answers which types of questions"
+    - tip: "Support each other - nod, look engaged when not speaking"
+
+# ============================================================================
+#                         TIME BREAKDOWN
+# ============================================================================
+
+time_breakdown:
+  total_time: "5-6 minutes"
+  
+  detailed_breakdown:
+    - section: "The Hook"
+      time: "45 seconds"
+      percentage: "12-15%"
+      
+    - section: "The Solution"
+      time: "60 seconds"
+      percentage: "17-20%"
+      
+    - section: "Live Demo"
+      time: "90-120 seconds"
+      percentage: "30-40%"
+      
+    - section: "Technical Depth"
+      time: "60 seconds"
+      percentage: "17-20%"
+      
+    - section: "Market & Business"
+      time: "45 seconds"
+      percentage: "12-15%"
+      
+    - section: "The Close"
+      time: "30-45 seconds"
+      percentage: "8-12%"
+  
+  flexibility_notes: |
+    If running short on time, compress Technical Depth and Market sections.
+    NEVER rush the Hook, Demo, or Close - these are your impact moments.
+    
+    If you have extra time, expand the Demo with more explanation or add
+    a brief "future vision" section before the Close.
+
+# ============================================================================
+#                    MEMORABLE PHRASES TO USE
+# ============================================================================
+
+memorable_phrases:
+  
+  power_phrases:
+    - phrase: "In 3 seconds, anyone's voice can be cloned. In 2 seconds, Aegis-AI detects it."
+    - phrase: "We don't just say 'fake' - we show you WHY."
+    - phrase: "Your media never leaves your device. Period."
+    - phrase: "Built for the moments when the internet isn't there, but the threat is."
+    - phrase: "Not detection - verification. Not guessing - evidence."
+    - phrase: "The only offline-first solution in a market full of cloud-dependent tools."
+    - phrase: "We make AI explain AI."
+    - phrase: "Privacy isn't a feature. It's the architecture."
+  
+  transition_phrases:
+    - phrase: "Let me show you exactly what I mean..."
+    - phrase: "But don't take my word for it - watch this..."
+    - phrase: "Here's where it gets interesting..."
+    - phrase: "This is the part that changes everything..."
+  
+  closing_phrases:
+    - phrase: "The threat is here. Now, so is the solution."
+    - phrase: "We built this in [X] hours. Imagine what we build with support."
+    - phrase: "Aegis-AI: Because trust shouldn't require connectivity."
+
+# ============================================================================
+#                              END OF GUIDE
+# ============================================================================
+# 
+# Remember: You've built something real. You understand the problem deeply.
+# You have a clear vision. Now show them why Aegis-AI is UNREJECTABLE.
+#
+# Good luck, team-ZerOne! 🛡️
+# ============================================================================

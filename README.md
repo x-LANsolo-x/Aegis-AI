@@ -12,7 +12,7 @@ This repository contains two finalized hackathon deliverables:
 ## What’s Implemented
 
 ### 1) UI Prototype (Audio / Video / Image)
-Location: `aegis-ui-demo/`
+Location: `legacy-demo/aegis-ui-demo/`
 
 A fully navigable, professional UI prototype showing the core product workflow:
 
@@ -34,7 +34,7 @@ A fully navigable, professional UI prototype showing the core product workflow:
 > This UI is designed to look like a real, production-ready security product.
 
 ### 2) Localhost Model Demo (Audio)
-Location: `model-demo/`
+Location: `legacy-demo/model-demo/`
 
 A localhost demo that:
 
@@ -62,7 +62,7 @@ This demo is intended for a fast mentoring/pitch environment: it is optimized fo
 
 ```bash
 py -m pip install gradio
-py model-demo/aegis_demo.py
+py legacy-demo/model-demo/aegis_demo.py
 ```
 
 Then open:
@@ -71,11 +71,11 @@ Then open:
 
 ### Open the UI Prototype
 
-Open any of these directly in a browser:
+Open any of these directly in a browser (now under `legacy-demo/`):
 
-- `aegis-ui-demo/index.html` (Audio dashboard)
-- `aegis-ui-demo/video-dashboard.html` (Video dashboard)
-- `aegis-ui-demo/image-dashboard.html` (Image dashboard)
+- `legacy-demo/aegis-ui-demo/index.html` (Audio dashboard)
+- `legacy-demo/aegis-ui-demo/video-dashboard.html` (Video dashboard)
+- `legacy-demo/aegis-ui-demo/image-dashboard.html` (Image dashboard)
 
 ---
 

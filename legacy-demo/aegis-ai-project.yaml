@@ -1,0 +1,971 @@
+# ============================================================================
+# AEGIS-AI PROJECT SPECIFICATION
+# Autonomous, Offline, Federated Agentic AI for Real-Time Deepfake Threat Detection
+# Enhanced with RunAnywhere SDK Integration
+# ============================================================================
+
+project:
+  name: "Aegis-AI"
+  full_title: "Autonomous, Offline, Federated Agentic AI for Real-Time Deepfake Threat Detection"
+  version: "1.0.0"
+  hackathon: "SnowHack IPEC"
+  
+  domains:
+    - "AI & GenAI"
+    - "Intelligent Agents"
+    - "Offline Critical Tools"
+    - "Privacy-First Personal Assistants"
+    - "National Security & Defense"
+
+# ============================================================================
+# TEAM DETAILS
+# ============================================================================
+team:
+  name: "team-ZerOne"
+  institution: "Chandigarh University"
+  members:
+    - name: "Kumar Utkarsh"
+      year: "2nd Year"
+      role: "Team Lead"
+    - name: "Akarshan Kumar"
+      year: "2nd Year"
+      role: "Developer"
+    - name: "Millee Kesarwani"
+      year: "2nd Year"
+      role: "Developer"
+    - name: "Shashwat Vatsyayan"
+      year: "2nd Year"
+      role: "Developer"
+
+# ============================================================================
+# PROBLEM STATEMENT
+# ============================================================================
+problem_statement:
+  summary: |
+    Deepfake audio and video can impersonate high-value targets including 
+    Army Commanders, Police Officials, Politicians, CEOs, and Journalists.
+    A single fake command can cause national-level damage.
+
+  critical_scenario:
+    description: |
+      A field officer receives a voice note from a "senior officer" ordering 
+      troop movement. The voice sounds real — but it is AI-generated.
+    challenges:
+      - "No internet connectivity in field operations"
+      - "No time to verify authenticity"
+      - "No trusted verification tool available"
+      - "High stakes - wrong decision can be catastrophic"
+
+  affected_stakeholders:
+    - stakeholder: "Military Personnel"
+      impact: "False orders leading to strategic failures"
+      severity: "Critical"
+    - stakeholder: "Law Enforcement"
+      impact: "Manipulated evidence, wrong operations"
+      severity: "High"
+    - stakeholder: "Government Officials"
+      impact: "Political misinformation, policy manipulation"
+      severity: "High"
+    - stakeholder: "Journalists"
+      impact: "Spreading fake news unknowingly"
+      severity: "Medium"
+    - stakeholder: "General Public"
+      impact: "Election manipulation, financial fraud"
+      severity: "High"
+
+# ============================================================================
+# PROPOSED SOLUTION
+# ============================================================================
+proposed_solution:
+  product_name: "AegisAI-Edge"
+  tagline: "AI verification agent that works offline, on-device, in real-time"
+  
+  overview: |
+    AegisAI-Edge is an AI verification agent that runs directly on field devices 
+    (phones, body-cams, tactical hardware), works completely offline without 
+    internet, provides instant results in 1-2 seconds, and uses federated 
+    learning to continuously improve across all devices.
+
+  key_features:
+    - feature: "Offline-First Detection"
+      description: "Full deepfake analysis without cloud dependency"
+      runanywhere_integration: "RunAnywhere SDK runs entirely on-device with no cloud required"
+      
+    - feature: "Federated Learning"
+      description: "Devices learn locally, share only model updates (not raw data)"
+      runanywhere_integration: "Model updates can be distributed via RunAnywhere's model management"
+      
+    - feature: "Agentic AI"
+      description: "Not just detection — provides actionable recommendations"
+      runanywhere_integration: "LLM backend (LlamaCPP) generates human-readable explanations"
+      
+    - feature: "Zero-Trust Verification"
+      description: "Every media treated suspicious until verified"
+      runanywhere_integration: "VAD + STT pipeline for continuous audio monitoring"
+      
+    - feature: "Explainable AI"
+      description: "Human-readable reasons with confidence scores"
+      runanywhere_integration: "LLM generates contextual explanations for detections"
+      
+    - feature: "Ultra-Low Power"
+      description: "Optimized for battery-constrained devices"
+      runanywhere_integration: "INT8 quantized models, optimized ONNX runtime"
+
+  user_flow:
+    - step: 1
+      action: "Officer receives suspicious voice note"
+      icon: "📱"
+    - step: 2
+      action: "Opens AegisAI-Edge app"
+      icon: "📲"
+    - step: 3
+      action: "AI analyzes locally (NO internet needed)"
+      icon: "🔍"
+      runanywhere_component: "ONNX Backend + Custom Deepfake Model"
+    - step: 4
+      action: "Result in 1-2 seconds with confidence score"
+      icon: "⚡"
+      example_output: "⚠️ Synthetic voice detected. Confidence: 93%. Do not execute order."
+    - step: 5
+      action: "AI explains WHY it detected a fake"
+      icon: "💡"
+      runanywhere_component: "LLM Backend (LlamaCPP)"
+      example_output: "Voice pitch variation does not match known speaker behavior. Recommend secondary verification via command channel."
+
+# ============================================================================
+# TECHNICAL APPROACH
+# ============================================================================
+technical_approach:
+  
+  # Original Technologies from PPT
+  original_stack:
+    audio_detection:
+      - "CNN + Spectrogram Analysis"
+      - "Whisper (Lite)"
+      - "Transformer Encoder"
+    video_detection:
+      - "CNN + LSTM"
+      - "ResNet50"
+      - "MediaPipe (Face Landmarks)"
+    edge_runtime:
+      - "TensorFlow Lite (INT8 Quantized)"
+      - "ONNX Runtime"
+    federated_learning:
+      - "Flower Framework"
+    backend:
+      - "FastAPI/Flask"
+      - "Secure API Gateway"
+    security:
+      - "Android Keystore"
+      - "Secure Enclave"
+      - "JWT + RBAC"
+    optimization:
+      - "Edge Impulse (Compression, Quantization)"
+
+  # RunAnywhere SDK Integration
+  runanywhere_integration:
+    sdk_repository: "https://github.com/RunanywhereAI/runanywhere-sdks"
+    sdk_version: "0.15.11+"
+    license: "Apache 2.0"
+    
+    why_runanywhere:
+      - "On-device AI infrastructure already built and optimized"
+      - "Cross-platform support (iOS, Android, Flutter, React Native)"
+      - "Built-in Whisper STT for audio analysis"
+      - "ONNX Runtime backend for custom models"
+      - "LLM support for explainable AI"
+      - "VAD for voice activity detection"
+      - "No cloud dependency - fully offline capable"
+      - "INT8 quantization and Metal GPU acceleration"
+
+    platform_sdks:
+      swift:
+        platform: "iOS/macOS"
+        status: "Stable"
+        package: "Swift Package Manager"
+        documentation: "https://docs.runanywhere.ai/swift/introduction"
+      kotlin:
+        platform: "Android"
+        status: "Stable"
+        package: "Gradle"
+        dependency: "com.runanywhere.sdk:runanywhere-kotlin:0.1.4"
+        documentation: "https://docs.runanywhere.ai/kotlin/introduction"
+      react_native:
+        platform: "Cross-platform"
+        status: "Beta"
+        package: "npm"
+        dependency: "@runanywhere/core"
+        documentation: "https://docs.runanywhere.ai/react-native/introduction"
+      flutter:
+        platform: "Cross-platform"
+        status: "Beta"
+        package: "pub.dev"
+        dependency: "runanywhere: ^0.15.11"
+        documentation: "https://docs.runanywhere.ai/flutter/introduction"
+
+    runanywhere_components_used:
+      llm:
+        purpose: "Agentic AI - Generate explanations and recommendations"
+        backend: "LlamaCPP"
+        models:
+          - name: "SmolLM2 360M"
+            size: "~400MB"
+            ram: "500MB"
+            use_case: "Fast, lightweight explanations"
+          - name: "Qwen 2.5 0.5B"
+            size: "~500MB"
+            ram: "600MB"
+            use_case: "Multilingual support"
+          - name: "Llama 3.2 1B"
+            size: "~1GB"
+            ram: "1.2GB"
+            use_case: "Balanced quality/speed"
+        
+      stt:
+        purpose: "Audio preprocessing and transcription"
+        backend: "ONNX (Sherpa-ONNX) / WhisperCPP"
+        models:
+          - name: "Whisper Tiny"
+            size: "~75MB"
+            languages: "English"
+          - name: "Whisper Base"
+            size: "~150MB"
+            languages: "Multilingual"
+        integration: "Feed transcription to deepfake detector for analysis"
+        
+      tts:
+        purpose: "Voice alerts and notifications"
+        backend: "ONNX (Piper)"
+        models:
+          - name: "Piper US English"
+            size: "~65MB"
+        use_case: "Audible warnings for field officers"
+        
+      vad:
+        purpose: "Real-time voice activity detection"
+        backend: "ONNX (Silero) / Energy-based"
+        use_case: "Trigger deepfake analysis only when speech detected"
+        
+      voice_agent:
+        purpose: "Full voice pipeline orchestration"
+        pipeline: "VAD → STT → LLM → TTS"
+        use_case: "Complete voice-based interaction for hands-free operation"
+
+    custom_models_integration:
+      audio_deepfake_detector:
+        format: "ONNX"
+        architecture: "CNN + Spectrogram"
+        quantization: "INT8"
+        integration_method: "Custom ONNX backend extension"
+        
+      video_deepfake_detector:
+        format: "ONNX"
+        architecture: "CNN + LSTM / ResNet50"
+        quantization: "INT8"
+        integration_method: "Custom ONNX backend extension"
+        
+      face_landmark_analyzer:
+        library: "MediaPipe"
+        integration: "Native platform integration alongside RunAnywhere"
+
+# ============================================================================
+# SYSTEM ARCHITECTURE
+# ============================================================================
+architecture:
+  high_level_diagram: |
+    ┌─────────────────────────────────────────────────────────────────────┐
+    │                        AEGIS-AI APPLICATION                         │
+    │              (Deepfake Detection for Defense/Security)              │
+    └────────────────────────────────┬────────────────────────────────────┘
+                                     │
+    ┌────────────────────────────────▼────────────────────────────────────┐
+    │                      RUNANYWHERE SDK LAYER                          │
+    │                                                                      │
+    │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────┐ │
+    │  │   STT        │  │    LLM       │  │    TTS       │  │   VAD    │ │
+    │  │  (Whisper)   │  │  (Llama/     │  │  (Piper)     │  │ (Silero) │ │
+    │  │              │  │   Mistral)   │  │              │  │          │ │
+    │  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘  └────┬─────┘ │
+    └─────────┼─────────────────┼─────────────────┼───────────────┼───────┘
+              │                 │                 │               │
+    ┌─────────▼─────────────────▼─────────────────▼───────────────▼───────┐
+    │                    AEGIS-AI CUSTOM MODELS (ONNX)                    │
+    │                                                                      │
+    │  ┌──────────────────┐  ┌──────────────────┐  ┌────────────────────┐ │
+    │  │ Audio Deepfake   │  │ Video Deepfake   │  │ Explainable AI     │ │
+    │  │ Detector         │  │ Detector         │  │ Agent              │ │
+    │  │ CNN+Spectrogram  │  │ CNN+LSTM/ResNet  │  │ Recommendations    │ │
+    │  └──────────────────┘  └──────────────────┘  └────────────────────┘ │
+    └─────────────────────────────────────────────────────────────────────┘
+
+  detection_pipeline:
+    audio_pipeline:
+      - step: "Audio Input"
+        component: "Device Microphone / File"
+      - step: "Voice Activity Detection"
+        component: "RunAnywhere VAD (Silero)"
+      - step: "Speech-to-Text"
+        component: "RunAnywhere STT (Whisper)"
+      - step: "Spectrogram Generation"
+        component: "Custom Audio Processor"
+      - step: "Deepfake Detection"
+        component: "Custom ONNX Model (CNN)"
+      - step: "Explanation Generation"
+        component: "RunAnywhere LLM (Llama)"
+      - step: "Result + Recommendation"
+        component: "UI Display + TTS Alert"
+
+    video_pipeline:
+      - step: "Video Input"
+        component: "Device Camera / File"
+      - step: "Frame Extraction"
+        component: "Native Video Decoder"
+      - step: "Face Detection"
+        component: "MediaPipe Face Landmarks"
+      - step: "Temporal Analysis"
+        component: "Custom ONNX Model (CNN+LSTM)"
+      - step: "Deepfake Detection"
+        component: "Custom ONNX Model (ResNet50)"
+      - step: "Explanation Generation"
+        component: "RunAnywhere LLM (Llama)"
+      - step: "Result + Recommendation"
+        component: "UI Display + TTS Alert"
+
+# ============================================================================
+# PRODUCT SCOPE & FEATURES
+# ============================================================================
+product_scope:
+  
+  core_features:
+    - feature: "Edge Deepfake Detection"
+      description: "Detect fake audio/video offline on device"
+      runanywhere_enabled: true
+      
+    - feature: "Compression-Aware Detection"
+      description: "Works on WhatsApp/Telegram compressed media"
+      runanywhere_enabled: true
+      
+    - feature: "Real-Time Inference"
+      description: "Results in < 2 seconds"
+      runanywhere_enabled: true
+      
+    - feature: "Agentic Cognitive Assistance"
+      description: "Explains results + suggests actions"
+      runanywhere_component: "LLM (LlamaCPP)"
+      
+    - feature: "Zero-Trust Verification"
+      description: "Every media scanned before trust granted"
+      runanywhere_enabled: true
+      
+    - feature: "Secure Deployment"
+      description: "RBAC + MFA for field operatives"
+      implementation: "Android Keystore / Secure Enclave + JWT"
+      
+    - feature: "Explainable AI"
+      description: "Stores explanation + confidence + timestamp"
+      runanywhere_component: "LLM (LlamaCPP)"
+      
+    - feature: "Adversarial Resilience"
+      description: "Detects attempts to fool the AI"
+      implementation: "Custom adversarial detection layer"
+      
+    - feature: "Ultra-Low Power Mode"
+      description: "Efficient battery usage on body-cams"
+      runanywhere_feature: "INT8 quantization, optimized inference"
+
+  role_based_functionality:
+    field_officers:
+      - "Verify any audio/video in 1-2 seconds"
+      - "Get clear YES/NO with confidence percentage"
+      - "Receive actionable recommendations"
+      - "Voice-based hands-free operation (via RunAnywhere Voice Agent)"
+      
+    commanders:
+      - "Override verification decisions"
+      - "View threat escalation alerts"
+      - "Access chain-of-custody logs"
+      - "Monitor fleet-wide detection statistics"
+      
+    analysts:
+      - "Review all verification logs"
+      - "Access forensic evidence (timestamp + confidence)"
+      - "Generate threat reports"
+      - "Analyze detection patterns"
+      
+    network:
+      - "Federated learning syncs when internet available"
+      - "One device's learning protects ALL devices"
+      - "Privacy preserved — no raw media leaves device"
+      - "Model updates distributed via secure channels"
+
+  addon_features:
+    - feature: "Cryptographic Fingerprinting"
+      description: "Verify trusted government media"
+      
+    - feature: "Chain-of-Custody Logs"
+      description: "Track who verified what and when"
+      
+    - feature: "Multi-Modal Fusion"
+      description: "Combine audio + video scores for final verdict"
+      
+    - feature: "Voice Signature Matching"
+      description: "Detect tone vs. speech style mismatch"
+      
+    - feature: "Emergency Escalation"
+      description: "Auto-alert HQ on critical fake detection"
+      
+    - feature: "Election Integrity Mode"
+      description: "Flag political deepfakes before viral spread"
+      
+    - feature: "Journalist Mode"
+      description: "Verify leaked media before publishing"
+
+# ============================================================================
+# UNIQUE SELLING POINTS (USPs)
+# ============================================================================
+usps:
+  - usp: "Offline-First AI"
+    description: "Most deepfake detectors need cloud — ours works in no-network zones"
+    runanywhere_alignment: "RunAnywhere SDK is designed for offline-first operation"
+    
+  - usp: "Agentic Intelligence"
+    description: "Others just detect — ours advises action with context"
+    runanywhere_alignment: "LLM backend enables natural language explanations"
+    
+  - usp: "Federated Learning"
+    description: "Network gets smarter daily without sharing sensitive data"
+    implementation: "Flower Framework + RunAnywhere model management"
+    
+  - usp: "Zero-Trust Verification"
+    description: "Every media is suspicious until proven real"
+    runanywhere_alignment: "VAD + continuous monitoring pipeline"
+    
+  - usp: "Explainable AI"
+    description: "Human-readable reasons, not just 'fake/real'"
+    runanywhere_alignment: "LLM generates contextual explanations"
+    
+  - usp: "Edge Deployment"
+    description: "Real-world usable on phones, body-cams, tactical devices"
+    runanywhere_alignment: "Cross-platform SDKs for iOS, Android, Flutter, React Native"
+    
+  - usp: "Privacy-First"
+    description: "No audio/video ever leaves the device"
+    runanywhere_alignment: "All processing happens on-device"
+    
+  - usp: "National Security Ready"
+    description: "Built for defense-grade deployment"
+    implementation: "Secure Enclave, Android Keystore, JWT + RBAC"
+
+# ============================================================================
+# FEASIBILITY ANALYSIS
+# ============================================================================
+feasibility_analysis:
+  
+  technical_feasibility:
+    - aspect: "Technology Maturity"
+      assessment: "High"
+      details: "Uses proven frameworks: TensorFlow Lite, ONNX, Flower, RunAnywhere SDK"
+      
+    - aspect: "Model Availability"
+      assessment: "High"
+      details: "Pre-trained models available (ResNet50, Whisper) + RunAnywhere model registry"
+      
+    - aspect: "Edge Deployment"
+      assessment: "High"
+      details: "Industry-standard runtimes for mobile/ARM devices via RunAnywhere"
+      
+    - aspect: "Expertise Required"
+      assessment: "Medium"
+      details: "Standard ML/AI skills + mobile development + RunAnywhere SDK knowledge"
+
+  operational_feasibility:
+    - aspect: "Ease of Use"
+      assessment: "High"
+      details: "Simple app interface — upload media, get result"
+      
+    - aspect: "Training Required"
+      assessment: "Minimal"
+      details: "Intuitive UI with clear verdicts and voice guidance"
+      
+    - aspect: "Integration"
+      assessment: "High"
+      details: "Can integrate with existing tactical systems via API"
+      
+    - aspect: "Offline Operation"
+      assessment: "Full"
+      details: "Complete functionality without internet via RunAnywhere"
+
+  economic_feasibility:
+    - aspect: "Development Cost"
+      assessment: "Low"
+      details: "Uses open-source frameworks + RunAnywhere SDK (Apache 2.0)"
+      
+    - aspect: "Infrastructure Cost"
+      assessment: "Minimal"
+      details: "Only needed for federated sync, not real-time operation"
+      
+    - aspect: "Device Cost"
+      assessment: "None"
+      details: "Runs on existing phones/body-cams"
+      
+    - aspect: "Maintenance"
+      assessment: "Low"
+      details: "Self-improving via federated learning"
+
+  financial_feasibility:
+    - aspect: "Initial Budget"
+      assessment: "Low"
+      details: "Open-source stack + RunAnywhere SDK"
+      
+    - aspect: "Scalability"
+      assessment: "Linear"
+      details: "Add more edge devices, no cloud scaling needed"
+      
+    - aspect: "ROI"
+      assessment: "Infinite"
+      details: "Prevents single catastrophic event = immeasurable value"
+      
+    - aspect: "Revenue Model"
+      assessment: "B2G, B2B"
+      details: "Government licensing, Media/Enterprise subscriptions"
+
+# ============================================================================
+# CODE EXAMPLES - RUNANYWHERE INTEGRATION
+# ============================================================================
+code_examples:
+  
+  flutter_example:
+    description: "Flutter implementation using RunAnywhere SDK"
+    language: "dart"
+    code: |
+      import 'package:runanywhere/runanywhere.dart';
+      import 'package:runanywhere_onnx/runanywhere_onnx.dart';
+      import 'package:runanywhere_llamacpp/runanywhere_llamacpp.dart';
+
+      class AegisAIDetector {
+        
+        Future<void> initialize() async {
+          // Initialize RunAnywhere SDK
+          await RunAnywhere.initialize();
+          await LlamaCpp.register();
+          await Onnx.register();
+          
+          // Download required models
+          await RunAnywhere.downloadModel('whisper-tiny');
+          await RunAnywhere.downloadModel('smollm2-360m');
+          
+          // Load custom deepfake detection model
+          await Onnx.loadCustomModel('aegis-audio-detector.onnx');
+        }
+        
+        Future<DeepfakeResult> analyzeAudio(Uint8List audioData) async {
+          // Step 1: Transcribe audio using Whisper
+          final transcription = await RunAnywhere.transcribe(audioData);
+          
+          // Step 2: Run deepfake detection
+          final detectionResult = await Onnx.inference(
+            model: 'aegis-audio-detector',
+            input: audioData,
+          );
+          
+          // Step 3: Generate explanation using LLM
+          String explanation = '';
+          if (detectionResult.isDeepfake) {
+            explanation = await RunAnywhere.chat(
+              'Analyze this deepfake detection and provide recommendation: '
+              'Confidence: ${detectionResult.confidence}%. '
+              'Provide clear verdict for field officer.'
+            );
+          }
+          
+          return DeepfakeResult(
+            isDeepfake: detectionResult.isDeepfake,
+            confidence: detectionResult.confidence,
+            explanation: explanation,
+            transcription: transcription.text,
+          );
+        }
+      }
+
+  kotlin_example:
+    description: "Android/Kotlin implementation using RunAnywhere SDK"
+    language: "kotlin"
+    code: |
+      import com.runanywhere.sdk.public.RunAnywhere
+      import com.runanywhere.sdk.public.extensions.*
+      import kotlinx.coroutines.flow.collect
+
+      class AegisAIDetector(private val context: Context) {
+          
+          suspend fun initialize() {
+              // Initialize RunAnywhere SDK
+              LlamaCPP.register()
+              OnnxBackend.register()
+              RunAnywhere.initialize(environment = SDKEnvironment.PRODUCTION)
+              
+              // Download models
+              RunAnywhere.downloadModel("whisper-tiny").collect { 
+                  println("Whisper: ${it.progress * 100}%") 
+              }
+              RunAnywhere.downloadModel("smollm2-360m").collect { 
+                  println("LLM: ${it.progress * 100}%") 
+              }
+              
+              // Load custom deepfake model
+              RunAnywhere.loadCustomOnnxModel("aegis-audio-detector.onnx")
+          }
+          
+          suspend fun analyzeAudio(audioData: ByteArray): DeepfakeResult {
+              // Transcribe
+              val transcription = RunAnywhere.transcribe(audioData)
+              
+              // Detect deepfake
+              val detection = RunAnywhere.runOnnxInference(
+                  model = "aegis-audio-detector",
+                  input = audioData
+              )
+              
+              // Generate explanation
+              val explanation = if (detection.isDeepfake) {
+                  RunAnywhere.chat(
+                      "Analyze detection result for field officer: " +
+                      "Confidence: ${detection.confidence}%. " +
+                      "Provide actionable recommendation."
+                  )
+              } else ""
+              
+              return DeepfakeResult(
+                  isDeepfake = detection.isDeepfake,
+                  confidence = detection.confidence,
+                  explanation = explanation
+              )
+          }
+      }
+
+  swift_example:
+    description: "iOS/Swift implementation using RunAnywhere SDK"
+    language: "swift"
+    code: |
+      import RunAnywhere
+      import LlamaCPPRuntime
+      import ONNXRuntime
+
+      class AegisAIDetector {
+          
+          func initialize() async throws {
+              // Initialize RunAnywhere SDK
+              LlamaCPP.register()
+              ONNX.register()
+              try RunAnywhere.initialize()
+              
+              // Download models
+              try await RunAnywhere.downloadModel("whisper-tiny")
+              try await RunAnywhere.downloadModel("smollm2-360m")
+              
+              // Load models
+              try await RunAnywhere.loadModel("whisper-tiny")
+              try await RunAnywhere.loadModel("smollm2-360m")
+              
+              // Load custom deepfake detector
+              try await ONNX.loadCustomModel(path: "aegis-audio-detector.onnx")
+          }
+          
+          func analyzeAudio(_ audioData: Data) async throws -> DeepfakeResult {
+              // Transcribe audio
+              let transcription = try await RunAnywhere.transcribe(audioData)
+              
+              // Run deepfake detection
+              let detection = try await ONNX.inference(
+                  model: "aegis-audio-detector",
+                  input: audioData
+              )
+              
+              // Generate explanation if deepfake detected
+              var explanation = ""
+              if detection.isDeepfake {
+                  explanation = try await RunAnywhere.chat(
+                      "Analyze this detection for a field officer: " +
+                      "Confidence: \(detection.confidence)%. " +
+                      "Provide clear recommendation."
+                  )
+              }
+              
+              return DeepfakeResult(
+                  isDeepfake: detection.isDeepfake,
+                  confidence: detection.confidence,
+                  explanation: explanation
+              )
+          }
+      }
+
+  react_native_example:
+    description: "React Native implementation using RunAnywhere SDK"
+    language: "typescript"
+    code: |
+      import { RunAnywhere, SDKEnvironment } from '@runanywhere/core';
+      import { LlamaCPP } from '@runanywhere/llamacpp';
+      import { ONNX } from '@runanywhere/onnx';
+
+      class AegisAIDetector {
+        
+        async initialize(): Promise<void> {
+          // Initialize RunAnywhere SDK
+          await RunAnywhere.initialize({ environment: SDKEnvironment.Production });
+          LlamaCPP.register();
+          ONNX.register();
+          
+          // Download required models
+          await RunAnywhere.downloadModel('whisper-tiny');
+          await RunAnywhere.downloadModel('smollm2-360m');
+          
+          // Load custom deepfake detection model
+          await ONNX.loadCustomModel('aegis-audio-detector.onnx');
+        }
+        
+        async analyzeAudio(audioData: ArrayBuffer): Promise<DeepfakeResult> {
+          // Transcribe audio using Whisper
+          const transcription = await RunAnywhere.transcribe(audioData);
+          
+          // Run deepfake detection
+          const detection = await ONNX.inference({
+            model: 'aegis-audio-detector',
+            input: audioData,
+          });
+          
+          // Generate explanation using LLM
+          let explanation = '';
+          if (detection.isDeepfake) {
+            explanation = await RunAnywhere.chat(
+              `Analyze this deepfake detection: Confidence ${detection.confidence}%. ` +
+              `Provide clear verdict for field officer.`
+            );
+          }
+          
+          return {
+            isDeepfake: detection.isDeepfake,
+            confidence: detection.confidence,
+            explanation,
+            transcription: transcription.text,
+          };
+        }
+      }
+
+# ============================================================================
+# RESEARCH & REFERENCES
+# ============================================================================
+research_references:
+  
+  core_research_areas:
+    deepfake_detection:
+      - "CNN-based audio/video analysis"
+      - "Spectrogram analysis"
+      - "Face landmark detection"
+      - "Temporal inconsistency detection"
+      
+    federated_learning:
+      - "Distributed model training"
+      - "Privacy-preserving ML"
+      - "Edge synchronization"
+      - "Differential privacy"
+      
+    edge_ai_deployment:
+      - "Model quantization (INT8, INT4)"
+      - "On-device inference optimization"
+      - "Low-power optimization"
+      - "Hardware acceleration (Metal, NNAPI)"
+      
+    explainable_ai:
+      - "Human-readable explanations"
+      - "Confidence scoring"
+      - "Decision transparency"
+      - "Attention visualization"
+
+  technologies_and_frameworks:
+    deep_learning_models:
+      - "ResNet50"
+      - "CNN + LSTM"
+      - "Transformer Encoder"
+      - "Whisper (Lite)"
+      
+    edge_runtime:
+      - "TensorFlow Lite (INT8 Quantized)"
+      - "ONNX Runtime"
+      - "RunAnywhere SDK"
+      
+    federated_learning:
+      - "Flower Framework"
+      
+    face_analysis:
+      - "MediaPipe (Face Landmarks)"
+      
+    optimization_tools:
+      - "Edge Impulse (Compression, Quantization)"
+      
+    backend:
+      - "FastAPI/Flask"
+      - "Secure API Gateway"
+      
+    security:
+      - "Android Keystore"
+      - "Secure Enclave"
+      - "JWT + RBAC"
+
+  key_research_papers:
+    deepfake_detection:
+      - authors: "Rossler, A., et al."
+        year: 2019
+        title: "FaceForensics++: Learning to Detect Manipulated Facial Images"
+        venue: "ICCV 2019"
+        
+      - authors: "Dolhansky, B., et al."
+        year: 2020
+        title: "The DeepFake Detection Challenge Dataset"
+        venue: "Facebook AI"
+        
+    federated_learning:
+      - authors: "McMahan, B., et al."
+        year: 2017
+        title: "Communication-Efficient Learning of Deep Networks from Decentralized Data"
+        venue: "Google Research"
+        
+      - resource: "Flower Framework Documentation"
+        url: "https://flower.dev"
+        
+    audio_deepfake_detection:
+      - authors: "Müller, N., et al."
+        year: 2022
+        title: "Speech Deepfake Detection"
+        venue: "ASVspoof Challenge"
+        
+      - resource: "OpenAI Whisper Model"
+        url: "https://openai.com/research/whisper"
+
+  runanywhere_resources:
+    - resource: "RunAnywhere SDK Repository"
+      url: "https://github.com/RunanywhereAI/runanywhere-sdks"
+      
+    - resource: "RunAnywhere Documentation"
+      url: "https://docs.runanywhere.ai"
+      
+    - resource: "RunAnywhere Discord Community"
+      url: "https://discord.gg/N359FBbDVd"
+
+# ============================================================================
+# IMPLEMENTATION ROADMAP
+# ============================================================================
+implementation_roadmap:
+  
+  phase_1:
+    name: "Foundation Setup"
+    duration: "2 weeks"
+    tasks:
+      - "Set up Flutter/React Native project with RunAnywhere SDK"
+      - "Integrate ONNX and LlamaCPP backends"
+      - "Build basic UI for audio/video upload"
+      - "Implement device storage and security"
+      
+  phase_2:
+    name: "Model Integration"
+    duration: "3 weeks"
+    tasks:
+      - "Convert deepfake detection models to ONNX format"
+      - "Quantize models to INT8 for edge deployment"
+      - "Integrate Whisper STT for audio preprocessing"
+      - "Implement spectrogram generation pipeline"
+      
+  phase_3:
+    name: "Detection Pipeline"
+    duration: "3 weeks"
+    tasks:
+      - "Build audio deepfake detection pipeline"
+      - "Build video deepfake detection pipeline"
+      - "Implement VAD for real-time monitoring"
+      - "Add multi-modal fusion for combined results"
+      
+  phase_4:
+    name: "Agentic AI Layer"
+    duration: "2 weeks"
+    tasks:
+      - "Integrate LLM for explanation generation"
+      - "Build recommendation engine"
+      - "Implement voice agent for hands-free operation"
+      - "Add TTS for audible alerts"
+      
+  phase_5:
+    name: "Security & Federated Learning"
+    duration: "2 weeks"
+    tasks:
+      - "Implement RBAC and MFA"
+      - "Set up Flower Framework for federated learning"
+      - "Build chain-of-custody logging"
+      - "Security audit and hardening"
+      
+  phase_6:
+    name: "Testing & Deployment"
+    duration: "2 weeks"
+    tasks:
+      - "Field testing with target devices"
+      - "Performance optimization"
+      - "Documentation and training materials"
+      - "Production deployment"
+      
+  total_estimated_duration: "14 weeks"
+
+# ============================================================================
+# MINIMUM SYSTEM REQUIREMENTS
+# ============================================================================
+system_requirements:
+  
+  ios:
+    minimum_version: "iOS 17.0+"
+    recommended_version: "iOS 17.0+"
+    minimum_ram: "2GB"
+    recommended_ram: "4GB+"
+    storage: "500MB - 2GB (depending on models)"
+    
+  android:
+    minimum_api: "API 24 (Android 7.0)"
+    recommended_api: "API 28+"
+    minimum_ram: "2GB"
+    recommended_ram: "4GB+"
+    storage: "500MB - 2GB (depending on models)"
+    
+  supported_devices:
+    - "Smartphones (iOS/Android)"
+    - "Tablets"
+    - "Body-cams with Android OS"
+    - "Tactical communication devices"
+    - "Ruggedized military phones"
+
+  model_storage_requirements:
+    whisper_tiny: "~75MB"
+    whisper_base: "~150MB"
+    smollm2_360m: "~400MB"
+    llama_3_2_1b: "~1GB"
+    aegis_audio_detector: "~50-100MB (estimated)"
+    aegis_video_detector: "~100-200MB (estimated)"
+    total_minimum: "~500MB"
+    total_recommended: "~1.5GB"
+
+# ============================================================================
+# CONTACT & LICENSE
+# ============================================================================
+contact:
+  team: "team-ZerOne"
+  institution: "Chandigarh University"
+  hackathon: "SnowHack IPEC"
+  
+license:
+  project: "To be determined"
+  runanywhere_sdk: "Apache 2.0"
+  
+metadata:
+  created: "2026-01-24"
+  version: "1.0.0"
+  format: "YAML"
+  original_source: "teamZerone-SnowHackIPEC.pptx"
+  runanywhere_sdk_version: "0.15.11+"
+  
+# ============================================================================
+# END OF DOCUMENT
+# ============================================================================

@@ -802,7 +802,7 @@ HEADER_HTML = """
 """
 
 
-with gr.Blocks(css=CSS, title="Aegis-AI | Audio Verification") as demo:
+with gr.Blocks(title="Aegis-AI | Audio Verification") as demo:
     gr.HTML(HEADER_HTML)
 
     gr.HTML(
@@ -824,5 +824,5 @@ with gr.Blocks(css=CSS, title="Aegis-AI | Audio Verification") as demo:
 
 if __name__ == "__main__":
     print("AEGIS-AI demo running on http://127.0.0.1:7860")
-    demo.launch(server_name="127.0.0.1", server_port=7860, show_error=True)
+    demo.launch(server_name="127.0.0.1", server_port=7860, show_error=True, css=CSS)
 

@@ -1,0 +1,1404 @@
+# ============================================================================
+# AEGIS-AI TECHNICAL IMPLEMENTATION SPECIFICATION
+# 100% FREE & OPEN-SOURCE IMPLEMENTATION
+# ============================================================================
+
+metadata:
+  document_type: "Technical Implementation Specification"
+  project_name: "Aegis-AI"
+  version: "1.0.0"
+  created: "2026-01-24"
+  license_philosophy: "100% Free - No paid services, APIs, or subscriptions"
+  
+cost_summary:
+  development_cost: "$0 (using free tools only)"
+  runtime_cost: "$0 (no cloud APIs or subscriptions)"
+  deployment_cost: "$0 (self-hosted, on-device)"
+  maintenance_cost: "$0 (open-source dependencies)"
+  total_cost: "$0"
+
+# ============================================================================
+# CORE TECHNOLOGY STACK - ALL FREE & OPEN SOURCE
+# ============================================================================
+technology_stack:
+
+  # ---------------------------------------------------------------------------
+  # MOBILE APPLICATION FRAMEWORK
+  # ---------------------------------------------------------------------------
+  mobile_framework:
+    primary_choice:
+      name: "Flutter"
+      version: "3.x"
+      license: "BSD-3-Clause (FREE)"
+      cost: "$0"
+      why_chosen:
+        - "Single codebase for iOS and Android"
+        - "Excellent performance with native compilation"
+        - "Large community and ecosystem"
+        - "RunAnywhere SDK has Flutter support"
+      repository: "https://github.com/flutter/flutter"
+      
+    alternative_choice:
+      name: "React Native"
+      version: "0.73+"
+      license: "MIT (FREE)"
+      cost: "$0"
+      repository: "https://github.com/facebook/react-native"
+
+  # ---------------------------------------------------------------------------
+  # ON-DEVICE AI RUNTIME
+  # ---------------------------------------------------------------------------
+  ai_runtime:
+    primary_runtime:
+      name: "RunAnywhere SDK"
+      version: "0.15.11+"
+      license: "Apache 2.0 (FREE)"
+      cost: "$0"
+      repository: "https://github.com/RunanywhereAI/runanywhere-sdks"
+      components:
+        - component: "runanywhere-commons"
+          purpose: "Core SDK functionality"
+        - component: "runanywhere-onnx"
+          purpose: "ONNX model inference"
+        - component: "runanywhere-llamacpp"
+          purpose: "LLM inference for explanations"
+          
+    onnx_runtime:
+      name: "ONNX Runtime"
+      version: "1.16+"
+      license: "MIT (FREE)"
+      cost: "$0"
+      repository: "https://github.com/microsoft/onnxruntime"
+      platforms:
+        - "Android (Java/Kotlin)"
+        - "iOS (Swift/Objective-C)"
+        - "React Native"
+        - "Flutter (via FFI)"
+        
+    tensorflow_lite:
+      name: "TensorFlow Lite"
+      version: "2.x"
+      license: "Apache 2.0 (FREE)"
+      cost: "$0"
+      repository: "https://github.com/tensorflow/tensorflow"
+      use_case: "Alternative runtime for specific models"
+
+  # ---------------------------------------------------------------------------
+  # SPEECH-TO-TEXT (STT)
+  # ---------------------------------------------------------------------------
+  speech_to_text:
+    primary_choice:
+      name: "Whisper.cpp"
+      license: "MIT (FREE)"
+      cost: "$0"
+      repository: "https://github.com/ggerganov/whisper.cpp"
+      models:
+        - name: "whisper-tiny"
+          size: "75MB"
+          languages: "English"
+          speed: "Fastest"
+        - name: "whisper-base"
+          size: "150MB"
+          languages: "Multilingual (99 languages)"
+          speed: "Fast"
+        - name: "whisper-small"
+          size: "500MB"
+          languages: "Multilingual"
+          speed: "Medium"
+      integration: "Via RunAnywhere SDK or direct FFI binding"
+      
+    alternative_choice:
+      name: "Vosk"
+      license: "Apache 2.0 (FREE)"
+      cost: "$0"
+      repository: "https://github.com/alphacep/vosk-api"
+      advantage: "Smaller models, faster inference"
+      models:
+        - name: "vosk-model-small-en-us"
+          size: "40MB"
+        - name: "vosk-model-small-hi"
+          size: "42MB"
+
+  # ---------------------------------------------------------------------------
+  # TEXT-TO-SPEECH (TTS)
+  # ---------------------------------------------------------------------------
+  text_to_speech:
+    primary_choice:
+      name: "Piper TTS"
+      license: "MIT (FREE)"
+      cost: "$0"
+      repository: "https://github.com/rhasspy/piper"
+      models:
+        - name: "en_US-lessac-medium"
+          size: "65MB"
+          quality: "High"
+        - name: "en_US-amy-low"
+          size: "15MB"
+          quality: "Medium"
+      integration: "Via RunAnywhere SDK ONNX backend"
+      
+    alternative_choice:
+      name: "Coqui TTS"
+      license: "MPL 2.0 (FREE)"
+      cost: "$0"
+      repository: "https://github.com/coqui-ai/TTS"
+
+  # ---------------------------------------------------------------------------
+  # LARGE LANGUAGE MODEL (LLM) - FOR EXPLANATIONS
+  # ---------------------------------------------------------------------------
+  llm_engine:
+    runtime:
+      name: "llama.cpp"
+      license: "MIT (FREE)"
+      cost: "$0"
+      repository: "https://github.com/ggerganov/llama.cpp"
+      integration: "Via RunAnywhere LlamaCPP backend"
+      
+    models:
+      - name: "SmolLM2-360M-Instruct"
+        license: "Apache 2.0 (FREE)"
+        size: "~400MB"
+        ram_required: "500MB"
+        speed: "Very Fast"
+        quality: "Good for simple explanations"
+        download: "https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct"
+        
+      - name: "Qwen2.5-0.5B-Instruct"
+        license: "Apache 2.0 (FREE)"
+        size: "~500MB"
+        ram_required: "600MB"
+        speed: "Fast"
+        quality: "Better multilingual support"
+        download: "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct"
+        
+      - name: "Llama-3.2-1B-Instruct"
+        license: "Llama 3.2 Community License (FREE for most uses)"
+        size: "~1GB"
+        ram_required: "1.2GB"
+        speed: "Medium"
+        quality: "Best quality explanations"
+        download: "https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct"
+        
+      - name: "Phi-3-mini-4k-instruct"
+        license: "MIT (FREE)"
+        size: "~2GB"
+        ram_required: "2.5GB"
+        speed: "Slower"
+        quality: "Highest quality"
+        download: "https://huggingface.co/microsoft/Phi-3-mini-4k-instruct"
+        
+    recommended_for_aegis: "SmolLM2-360M-Instruct"
+    reason: "Best balance of size, speed, and quality for edge deployment"
+
+  # ---------------------------------------------------------------------------
+  # VOICE ACTIVITY DETECTION (VAD)
+  # ---------------------------------------------------------------------------
+  voice_activity_detection:
+    primary_choice:
+      name: "Silero VAD"
+      license: "MIT (FREE)"
+      cost: "$0"
+      repository: "https://github.com/snakers4/silero-vad"
+      model_size: "~2MB"
+      integration: "Via RunAnywhere SDK or direct ONNX"
+      
+    alternative_choice:
+      name: "WebRTC VAD"
+      license: "BSD-3-Clause (FREE)"
+      cost: "$0"
+      integration: "Native C++ with FFI binding"
+
+# ============================================================================
+# DEEPFAKE DETECTION MODELS - ALL FREE & OPEN SOURCE
+# ============================================================================
+deepfake_detection:
+
+  # ---------------------------------------------------------------------------
+  # AUDIO DEEPFAKE DETECTION
+  # ---------------------------------------------------------------------------
+  audio_detection:
+    
+    approach: "Spectrogram-based CNN classification"
+    
+    pretrained_models:
+      - name: "Wav2Vec2-ASVspoof"
+        description: "Fine-tuned Wav2Vec2 for audio deepfake detection"
+        license: "MIT (FREE)"
+        repository: "https://huggingface.co/models?search=asvspoof"
+        accuracy: "~95% on ASVspoof dataset"
+        
+      - name: "RawNet2"
+        description: "End-to-end raw waveform deepfake detector"
+        license: "MIT (FREE)"
+        repository: "https://github.com/asvspoof-challenge/2021"
+        accuracy: "~94% on ASVspoof 2021"
+        
+      - name: "AASIST"
+        description: "Audio Anti-Spoofing using Integrated Spectro-Temporal features"
+        license: "MIT (FREE)"
+        repository: "https://github.com/clovaai/aasist"
+        accuracy: "State-of-the-art on ASVspoof"
+        
+    training_datasets:
+      - name: "ASVspoof 2019/2021"
+        description: "Automatic Speaker Verification Spoofing challenge dataset"
+        license: "Free for research"
+        size: "~50GB"
+        download: "https://www.asvspoof.org/"
+        
+      - name: "FakeAVCeleb"
+        description: "Audio-Visual deepfake dataset"
+        license: "CC BY-NC 4.0 (FREE for non-commercial)"
+        download: "https://github.com/DASH-Lab/FakeAVCeleb"
+        
+      - name: "In-the-Wild Audio Deepfake"
+        description: "Real-world audio deepfakes"
+        license: "Free for research"
+        download: "https://deepfake-demo.aisec.fraunhofer.de/in_the_wild"
+        
+    custom_model_architecture:
+      name: "AegisAudioNet"
+      layers:
+        - layer: "Input"
+          shape: "[batch, 16000*5]"
+          description: "5 seconds of audio at 16kHz"
+        - layer: "MelSpectrogram"
+          params: "n_mels=80, hop_length=160"
+          description: "Convert to mel spectrogram"
+        - layer: "Conv2D Block 1"
+          filters: 32
+          kernel: "[3, 3]"
+          activation: "ReLU"
+        - layer: "Conv2D Block 2"
+          filters: 64
+          kernel: "[3, 3]"
+          activation: "ReLU"
+        - layer: "Conv2D Block 3"
+          filters: 128
+          kernel: "[3, 3]"
+          activation: "ReLU"
+        - layer: "Global Average Pooling"
+          description: "Reduce spatial dimensions"
+        - layer: "Dense"
+          units: 256
+          activation: "ReLU"
+        - layer: "Dropout"
+          rate: 0.5
+        - layer: "Output"
+          units: 2
+          activation: "Softmax"
+          classes: ["Real", "Fake"]
+      estimated_size: "~15MB (FP32), ~4MB (INT8 quantized)"
+      inference_time: "<100ms on mobile"
+
+  # ---------------------------------------------------------------------------
+  # VIDEO DEEPFAKE DETECTION
+  # ---------------------------------------------------------------------------
+  video_detection:
+    
+    approach: "Face-based temporal inconsistency detection"
+    
+    pretrained_models:
+      - name: "EfficientNet-B0 (FaceForensics++)"
+        description: "Efficient CNN trained on FaceForensics++ dataset"
+        license: "Apache 2.0 (FREE)"
+        repository: "https://github.com/ondyari/FaceForensics"
+        accuracy: "~96% on FaceForensics++"
+        model_size: "~20MB"
+        
+      - name: "XceptionNet Deepfake"
+        description: "Xception architecture for deepfake detection"
+        license: "MIT (FREE)"
+        repository: "https://github.com/ondyari/FaceForensics"
+        accuracy: "~95% on FaceForensics++"
+        model_size: "~88MB"
+        
+      - name: "FTCN (Fully Temporal Convolution Network)"
+        description: "Temporal-based video deepfake detection"
+        license: "MIT (FREE)"
+        repository: "https://github.com/yinglinzheng/FTCN"
+        accuracy: "~98% on FaceForensics++"
+        
+      - name: "LipForensics"
+        description: "Lip-sync based deepfake detection"
+        license: "CC BY-NC 4.0 (FREE for non-commercial)"
+        repository: "https://github.com/ahaliassos/LipForensics"
+        accuracy: "High generalization to unseen fakes"
+        
+    training_datasets:
+      - name: "FaceForensics++"
+        description: "Large-scale facial manipulation dataset"
+        license: "Free for research"
+        size: "~1TB (full), ~10GB (compressed)"
+        download: "https://github.com/ondyari/FaceForensics"
+        manipulations:
+          - "Deepfakes"
+          - "Face2Face"
+          - "FaceSwap"
+          - "NeuralTextures"
+          
+      - name: "Celeb-DF v2"
+        description: "High-quality celebrity deepfakes"
+        license: "Free for research"
+        size: "~4GB"
+        download: "https://github.com/yuezunli/celeb-deepfakeforensics"
+        
+      - name: "DFDC (DeepFake Detection Challenge)"
+        description: "Facebook's deepfake challenge dataset"
+        license: "Free for research"
+        size: "~470GB"
+        download: "https://ai.facebook.com/datasets/dfdc/"
+        
+      - name: "WildDeepfake"
+        description: "Real-world deepfakes from the internet"
+        license: "Free for research"
+        download: "https://github.com/deepfakeinthewild/deepfake-in-the-wild"
+        
+    face_detection_preprocessing:
+      library: "MediaPipe"
+      license: "Apache 2.0 (FREE)"
+      repository: "https://github.com/google/mediapipe"
+      features:
+        - "Face detection"
+        - "468 face landmarks"
+        - "Face mesh"
+        - "Iris detection"
+      mobile_optimized: true
+      
+    custom_model_architecture:
+      name: "AegisVideoNet"
+      description: "Lightweight video deepfake detector"
+      stages:
+        - stage: "Face Extraction"
+          tool: "MediaPipe Face Detection"
+          output: "Cropped face frames (224x224)"
+          
+        - stage: "Frame Encoder"
+          model: "MobileNetV3-Small"
+          license: "Apache 2.0 (FREE)"
+          pretrained: "ImageNet"
+          output: "Feature vector per frame"
+          
+        - stage: "Temporal Analysis"
+          model: "LSTM (2 layers, 128 units)"
+          input: "Sequence of frame features"
+          output: "Temporal representation"
+          
+        - stage: "Classification"
+          layers:
+            - "Dense(64, ReLU)"
+            - "Dropout(0.3)"
+            - "Dense(2, Softmax)"
+          output: "Real/Fake probability"
+          
+      estimated_size: "~25MB (FP32), ~7MB (INT8 quantized)"
+      inference_time: "<500ms for 3-second video on mobile"
+
+  # ---------------------------------------------------------------------------
+  # MODEL TRAINING INFRASTRUCTURE (FREE)
+  # ---------------------------------------------------------------------------
+  training_infrastructure:
+    
+    free_gpu_options:
+      - name: "Google Colab"
+        gpu: "NVIDIA T4 (15GB)"
+        hours: "~12 hours/session"
+        cost: "$0"
+        url: "https://colab.research.google.com"
+        
+      - name: "Kaggle Notebooks"
+        gpu: "NVIDIA P100 (16GB) or T4"
+        hours: "30 hours/week"
+        cost: "$0"
+        url: "https://www.kaggle.com"
+        
+      - name: "Lightning.ai"
+        gpu: "NVIDIA T4"
+        hours: "22 hours/month free"
+        cost: "$0"
+        url: "https://lightning.ai"
+        
+      - name: "Paperspace Gradient"
+        gpu: "NVIDIA M4000"
+        hours: "Free tier available"
+        cost: "$0"
+        url: "https://www.paperspace.com/gradient"
+        
+    training_frameworks:
+      - name: "PyTorch"
+        version: "2.x"
+        license: "BSD (FREE)"
+        repository: "https://github.com/pytorch/pytorch"
+        
+      - name: "PyTorch Lightning"
+        version: "2.x"
+        license: "Apache 2.0 (FREE)"
+        repository: "https://github.com/Lightning-AI/pytorch-lightning"
+        
+      - name: "Hugging Face Transformers"
+        version: "4.x"
+        license: "Apache 2.0 (FREE)"
+        repository: "https://github.com/huggingface/transformers"
+        
+    model_optimization:
+      quantization:
+        - tool: "ONNX Runtime Quantization"
+          license: "MIT (FREE)"
+          precision: "INT8"
+          size_reduction: "~75%"
+          
+        - tool: "TensorFlow Lite Converter"
+          license: "Apache 2.0 (FREE)"
+          precision: "INT8/FP16"
+          
+      pruning:
+        - tool: "PyTorch Pruning"
+          license: "BSD (FREE)"
+          
+        - tool: "Neural Network Intelligence (NNI)"
+          license: "MIT (FREE)"
+          repository: "https://github.com/microsoft/nni"
+          
+    model_export:
+      - format: "ONNX"
+        tool: "torch.onnx.export()"
+        runtime: "ONNX Runtime / RunAnywhere"
+        
+      - format: "TFLite"
+        tool: "TFLiteConverter"
+        runtime: "TensorFlow Lite"
+
+# ============================================================================
+# FEDERATED LEARNING - FREE IMPLEMENTATION
+# ============================================================================
+federated_learning:
+  
+  framework:
+    name: "Flower (flwr)"
+    version: "1.x"
+    license: "Apache 2.0 (FREE)"
+    cost: "$0"
+    repository: "https://github.com/adap/flower"
+    documentation: "https://flower.dev/docs/"
+    
+  architecture:
+    description: |
+      Federated learning allows devices to train locally and share only 
+      model updates (gradients), never raw audio/video data.
+      
+    components:
+      server:
+        description: "Central aggregation server"
+        deployment: "Self-hosted (free VPS or on-premise)"
+        role: "Aggregates model updates from all devices"
+        
+      clients:
+        description: "Edge devices running Aegis-AI"
+        role: "Train locally, send encrypted gradients"
+        
+    workflow:
+      - step: 1
+        action: "Device detects new media and makes prediction"
+      - step: 2
+        action: "If user corrects prediction, local training occurs"
+      - step: 3
+        action: "When internet available, encrypted gradients sent to server"
+      - step: 4
+        action: "Server aggregates updates using FedAvg algorithm"
+      - step: 5
+        action: "Updated global model distributed to all devices"
+      - step: 6
+        action: "Device downloads new model weights (not raw data)"
+        
+  privacy_techniques:
+    - technique: "Differential Privacy"
+      library: "Opacus"
+      license: "Apache 2.0 (FREE)"
+      repository: "https://github.com/pytorch/opacus"
+      description: "Add noise to gradients to prevent data leakage"
+      
+    - technique: "Secure Aggregation"
+      library: "TensorFlow Federated"
+      license: "Apache 2.0 (FREE)"
+      description: "Server cannot see individual device updates"
+      
+    - technique: "Model Encryption"
+      description: "Encrypt model updates in transit"
+      
+  free_server_hosting:
+    - option: "Oracle Cloud Free Tier"
+      specs: "4 ARM cores, 24GB RAM, 200GB storage"
+      cost: "$0 forever"
+      url: "https://www.oracle.com/cloud/free/"
+      
+    - option: "Google Cloud Free Tier"
+      specs: "e2-micro instance"
+      cost: "$0 (with limits)"
+      url: "https://cloud.google.com/free"
+      
+    - option: "On-Premise Server"
+      description: "Deploy on organization's existing infrastructure"
+      cost: "$0 (use existing hardware)"
+
+# ============================================================================
+# SECURITY IMPLEMENTATION - ALL FREE
+# ============================================================================
+security:
+  
+  device_security:
+    android:
+      - component: "Android Keystore"
+        purpose: "Secure key storage"
+        license: "Part of Android (FREE)"
+        usage: "Store encryption keys for model and data"
+        
+      - component: "BiometricPrompt API"
+        purpose: "User authentication"
+        license: "Part of Android (FREE)"
+        usage: "Fingerprint/Face unlock for sensitive operations"
+        
+      - component: "SafetyNet/Play Integrity"
+        purpose: "Device attestation"
+        license: "FREE"
+        usage: "Verify device is not rooted/compromised"
+        
+    ios:
+      - component: "Secure Enclave"
+        purpose: "Hardware-backed key storage"
+        license: "Part of iOS (FREE)"
+        usage: "Store encryption keys securely"
+        
+      - component: "LocalAuthentication"
+        purpose: "Biometric authentication"
+        license: "Part of iOS (FREE)"
+        usage: "Face ID/Touch ID for sensitive operations"
+        
+      - component: "App Attest"
+        purpose: "Device attestation"
+        license: "FREE"
+        usage: "Verify app integrity"
+        
+  data_encryption:
+    at_rest:
+      algorithm: "AES-256-GCM"
+      library: "Platform native (FREE)"
+      usage: "Encrypt stored models and detection logs"
+      
+    in_transit:
+      protocol: "TLS 1.3"
+      library: "Platform native (FREE)"
+      usage: "Encrypt all network communication"
+      
+    model_encryption:
+      description: "Encrypt ONNX models at rest"
+      key_storage: "Android Keystore / iOS Secure Enclave"
+      
+  authentication:
+    local_auth:
+      method: "PIN / Biometric"
+      implementation: "Platform native APIs (FREE)"
+      
+    rbac:
+      description: "Role-Based Access Control"
+      implementation: "Custom Flutter/Dart logic"
+      roles:
+        - role: "Field Officer"
+          permissions: ["detect", "view_own_logs"]
+        - role: "Commander"
+          permissions: ["detect", "view_all_logs", "override", "alerts"]
+        - role: "Analyst"
+          permissions: ["view_all_logs", "export_reports", "forensics"]
+        - role: "Admin"
+          permissions: ["all", "manage_users", "configure_system"]
+          
+    jwt_tokens:
+      library: "dart_jsonwebtoken"
+      license: "MIT (FREE)"
+      usage: "Secure API authentication for federated sync"
+      
+  audit_logging:
+    description: "Chain-of-custody logs for all detections"
+    storage: "Local SQLite (encrypted)"
+    fields:
+      - "timestamp"
+      - "user_id"
+      - "media_hash (SHA-256)"
+      - "detection_result"
+      - "confidence_score"
+      - "action_taken"
+      - "device_id"
+
+# ============================================================================
+# BACKEND INFRASTRUCTURE (OPTIONAL - FOR FEDERATED SYNC)
+# ============================================================================
+backend_infrastructure:
+  
+  note: |
+    Backend is OPTIONAL and only needed for:
+    1. Federated learning synchronization
+    2. Fleet management (enterprise deployments)
+    3. Centralized logging (if required)
+    The app works 100% OFFLINE without any backend.
+    
+  api_framework:
+    primary:
+      name: "FastAPI"
+      version: "0.100+"
+      license: "MIT (FREE)"
+      repository: "https://github.com/tiangolo/fastapi"
+      language: "Python"
+      
+    alternative:
+      name: "Express.js"
+      version: "4.x"
+      license: "MIT (FREE)"
+      repository: "https://github.com/expressjs/express"
+      language: "JavaScript/TypeScript"
+      
+  database:
+    primary:
+      name: "PostgreSQL"
+      version: "15+"
+      license: "PostgreSQL License (FREE)"
+      usage: "User management, fleet metadata"
+      
+    timeseries:
+      name: "TimescaleDB"
+      license: "Apache 2.0 (FREE community edition)"
+      usage: "Detection analytics and metrics"
+      
+    cache:
+      name: "Redis"
+      license: "BSD-3-Clause (FREE)"
+      usage: "Session management, rate limiting"
+      
+  message_queue:
+    name: "RabbitMQ"
+    license: "MPL 2.0 (FREE)"
+    usage: "Async federated learning updates"
+    alternative: "Redis Pub/Sub (FREE)"
+    
+  containerization:
+    runtime:
+      name: "Docker"
+      license: "Apache 2.0 (FREE)"
+      
+    orchestration:
+      name: "Docker Compose"
+      license: "Apache 2.0 (FREE)"
+      note: "Kubernetes optional for large scale"
+      
+  free_hosting_options:
+    - provider: "Oracle Cloud Free Tier"
+      specs: "4 ARM Ampere cores, 24GB RAM, 200GB storage"
+      cost: "$0 forever"
+      best_for: "Production federated learning server"
+      
+    - provider: "Railway"
+      specs: "500 hours/month free"
+      cost: "$0 (hobby tier)"
+      best_for: "Small deployments"
+      
+    - provider: "Render"
+      specs: "750 hours/month free"
+      cost: "$0 (free tier)"
+      best_for: "API hosting"
+      
+    - provider: "Fly.io"
+      specs: "3 shared VMs free"
+      cost: "$0 (free allowance)"
+      best_for: "Globally distributed API"
+      
+    - provider: "Self-hosted"
+      description: "Deploy on organization's infrastructure"
+      cost: "$0"
+      best_for: "Defense/government deployments"
+
+# ============================================================================
+# PROJECT STRUCTURE
+# ============================================================================
+project_structure:
+  
+  flutter_app:
+    root: "aegis_ai/"
+    structure: |
+      aegis_ai/
+      +-- android/                    # Android native code
+      +-- ios/                        # iOS native code
+      +-- lib/
+      ¦   +-- main.dart              # App entry point
+      ¦   +-- app/
+      ¦   ¦   +-- app.dart           # App configuration
+      ¦   ¦   +-- routes.dart        # Navigation routes
+      ¦   ¦   +-- theme.dart         # UI theme
+      ¦   +-- core/
+      ¦   ¦   +-- constants/         # App constants
+      ¦   ¦   +-- errors/            # Error handling
+      ¦   ¦   +-- utils/             # Utility functions
+      ¦   ¦   +-- services/
+      ¦   ¦       +-- runanywhere_service.dart
+      ¦   ¦       +-- audio_service.dart
+      ¦   ¦       +-- video_service.dart
+      ¦   ¦       +-- storage_service.dart
+      ¦   +-- data/
+      ¦   ¦   +-- models/            # Data models
+      ¦   ¦   +-- repositories/      # Data repositories
+      ¦   ¦   +-- datasources/
+      ¦   ¦       +-- local/         # SQLite, SharedPrefs
+      ¦   ¦       +-- remote/        # API clients
+      ¦   +-- domain/
+      ¦   ¦   +-- entities/          # Business entities
+      ¦   ¦   +-- repositories/      # Repository interfaces
+      ¦   ¦   +-- usecases/
+      ¦   ¦       +-- detect_audio_deepfake.dart
+      ¦   ¦       +-- detect_video_deepfake.dart
+      ¦   ¦       +-- generate_explanation.dart
+      ¦   ¦       +-- sync_federated_model.dart
+      ¦   +-- presentation/
+      ¦   ¦   +-- screens/
+      ¦   ¦   ¦   +-- home/
+      ¦   ¦   ¦   +-- detection/
+      ¦   ¦   ¦   +-- history/
+      ¦   ¦   ¦   +-- settings/
+      ¦   ¦   ¦   +-- auth/
+      ¦   ¦   +-- widgets/           # Reusable widgets
+      ¦   ¦   +-- blocs/             # State management
+      ¦   +-- ml/
+      ¦       +-- audio_detector.dart
+      ¦       +-- video_detector.dart
+      ¦       +-- explainer.dart
+      ¦       +-- model_manager.dart
+      +-- assets/
+      ¦   +-- models/                # ONNX models
+      ¦   +-- images/
+      ¦   +-- fonts/
+      +-- test/                      # Unit & widget tests
+      +-- integration_test/          # Integration tests
+      +-- pubspec.yaml               # Dependencies
+
+  ml_training:
+    root: "ml_training/"
+    structure: |
+      ml_training/
+      +-- notebooks/
+      ¦   +-- audio_deepfake_training.ipynb
+      ¦   +-- video_deepfake_training.ipynb
+      ¦   +-- model_optimization.ipynb
+      +-- src/
+      ¦   +-- data/
+      ¦   ¦   +-- audio_dataset.py
+      ¦   ¦   +-- video_dataset.py
+      ¦   ¦   +-- augmentations.py
+      ¦   +-- models/
+      ¦   ¦   +-- audio_net.py
+      ¦   ¦   +-- video_net.py
+      ¦   +-- training/
+      ¦   ¦   +-- trainer.py
+      ¦   ¦   +-- callbacks.py
+      ¦   +-- export/
+      ¦       +-- to_onnx.py
+      ¦       +-- quantize.py
+      +-- configs/
+      ¦   +-- audio_config.yaml
+      ¦   +-- video_config.yaml
+      +-- scripts/
+      ¦   +-- download_datasets.sh
+      ¦   +-- train_audio.sh
+      ¦   +-- train_video.sh
+      +-- requirements.txt
+
+  backend:
+    root: "backend/"
+    structure: |
+      backend/
+      +-- app/
+      ¦   +-- main.py               # FastAPI entry point
+      ¦   +-- api/
+      ¦   ¦   +-- routes/
+      ¦   ¦   ¦   +-- auth.py
+      ¦   ¦   ¦   +-- federated.py
+      ¦   ¦   ¦   +-- fleet.py
+      ¦   ¦   +-- dependencies.py
+      ¦   +-- core/
+      ¦   ¦   +-- config.py
+      ¦   ¦   +-- security.py
+      ¦   ¦   +-- database.py
+      ¦   +-- models/
+      ¦   ¦   +-- user.py
+      ¦   ¦   +-- device.py
+      ¦   ¦   +-- detection_log.py
+      ¦   +-- services/
+      ¦       +-- federated_service.py
+      ¦       +-- notification_service.py
+      +-- flower_server/
+      ¦   +-- server.py             # Flower federated server
+      ¦   +-- strategy.py           # FedAvg strategy
+      +-- tests/
+      +-- docker-compose.yml
+      +-- Dockerfile
+      +-- requirements.txt
+
+# ============================================================================
+# FLUTTER DEPENDENCIES (ALL FREE)
+# ============================================================================
+flutter_dependencies:
+  
+  pubspec_yaml: |
+    name: aegis_ai
+    description: Offline deepfake detection for national security
+    version: 1.0.0+1
+    
+    environment:
+      sdk: '>=3.0.0 <4.0.0'
+      flutter: '>=3.10.0'
+    
+    dependencies:
+      flutter:
+        sdk: flutter
+      
+      # RunAnywhere SDK (FREE - Apache 2.0)
+      runanywhere: ^0.15.11
+      runanywhere_onnx: ^0.15.11
+      runanywhere_llamacpp: ^0.15.11
+      
+      # State Management (FREE - MIT)
+      flutter_bloc: ^8.1.3
+      equatable: ^2.0.5
+      
+      # Local Storage (FREE - BSD)
+      sqflite: ^2.3.0
+      shared_preferences: ^2.2.2
+      flutter_secure_storage: ^9.0.0
+      
+      # Networking (FREE - MIT)
+      dio: ^5.4.0
+      
+      # Media Handling (FREE - BSD/MIT)
+      just_audio: ^0.9.36
+      video_player: ^2.8.2
+      image_picker: ^1.0.7
+      file_picker: ^6.1.1
+      
+      # Audio Processing (FREE - MIT)
+      audio_waveforms: ^1.0.5
+      
+      # Security (FREE - BSD)
+      local_auth: ^2.1.8
+      crypto: ^3.0.3
+      
+      # UI Components (FREE - BSD)
+      flutter_svg: ^2.0.9
+      lottie: ^3.0.0
+      fl_chart: ^0.66.0
+      
+      # Utilities (FREE - BSD/MIT)
+      path_provider: ^2.1.2
+      permission_handler: ^11.2.0
+      connectivity_plus: ^5.0.2
+      intl: ^0.19.0
+      uuid: ^4.3.3
+      
+      # JWT for auth (FREE - MIT)
+      dart_jsonwebtoken: ^2.12.2
+      
+    dev_dependencies:
+      flutter_test:
+        sdk: flutter
+      flutter_lints: ^3.0.1
+      mockito: ^5.4.4
+      bloc_test: ^9.1.5
+
+# ============================================================================
+# PYTHON DEPENDENCIES FOR ML TRAINING (ALL FREE)
+# ============================================================================
+python_dependencies:
+  
+  requirements_txt: |
+    # Deep Learning (FREE)
+    torch>=2.0.0
+    torchvision>=0.15.0
+    torchaudio>=2.0.0
+    pytorch-lightning>=2.0.0
+    
+    # Transformers (FREE - Apache 2.0)
+    transformers>=4.36.0
+    
+    # Audio Processing (FREE)
+    librosa>=0.10.0
+    soundfile>=0.12.0
+    
+    # Video Processing (FREE)
+    opencv-python>=4.8.0
+    mediapipe>=0.10.0
+    
+    # Model Export (FREE)
+    onnx>=1.15.0
+    onnxruntime>=1.16.0
+    
+    # Optimization (FREE)
+    onnxruntime-tools>=1.7.0
+    
+    # Federated Learning (FREE - Apache 2.0)
+    flwr>=1.6.0
+    
+    # Differential Privacy (FREE - Apache 2.0)
+    opacus>=1.4.0
+    
+    # Data Science (FREE)
+    numpy>=1.24.0
+    pandas>=2.0.0
+    scikit-learn>=1.3.0
+    
+    # Visualization (FREE)
+    matplotlib>=3.8.0
+    seaborn>=0.13.0
+    
+    # Experiment Tracking (FREE)
+    wandb>=0.16.0
+    tensorboard>=2.15.0
+    
+    # Utilities (FREE)
+    tqdm>=4.66.0
+    pyyaml>=6.0.0
+    python-dotenv>=1.0.0
+
+# ============================================================================
+# DEVELOPMENT TOOLS (ALL FREE)
+# ============================================================================
+development_tools:
+  
+  ide:
+    - name: "VS Code"
+      license: "MIT (FREE)"
+      extensions:
+        - "Dart"
+        - "Flutter"
+        - "Python"
+        - "YAML"
+        - "Docker"
+        
+    - name: "Android Studio"
+      license: "Apache 2.0 (FREE)"
+      usage: "Android emulator, native debugging"
+      
+  version_control:
+    name: "Git"
+    license: "GPL-2.0 (FREE)"
+    hosting:
+      - name: "GitHub"
+        cost: "$0 (public repos, unlimited private)"
+      - name: "GitLab"
+        cost: "$0 (unlimited private repos)"
+        
+  testing:
+    unit_testing:
+      - "flutter_test (FREE)"
+      - "pytest (FREE)"
+      
+    integration_testing:
+      - "Flutter integration_test (FREE)"
+      - "Appium (FREE - Apache 2.0)"
+      
+    device_testing:
+      - name: "Firebase Test Lab"
+        cost: "$0 (10 tests/day free)"
+      - name: "Physical devices"
+        cost: "$0 (use team's existing devices)"
+        
+  code_quality:
+    - name: "flutter_lints"
+      license: "BSD (FREE)"
+    - name: "pylint"
+      license: "GPL (FREE)"
+    - name: "black"
+      license: "MIT (FREE)"
+      
+  documentation:
+    - name: "MkDocs"
+      license: "BSD (FREE)"
+    - name: "Sphinx"
+      license: "BSD (FREE)"
+
+# ============================================================================
+# CI/CD PIPELINE (ALL FREE)
+# ============================================================================
+ci_cd:
+  
+  platform:
+    name: "GitHub Actions"
+    cost: "$0 (2000 minutes/month free for private repos)"
+    
+  workflows:
+    flutter_ci:
+      triggers: ["push", "pull_request"]
+      jobs:
+        - name: "Analyze"
+          steps:
+            - "flutter pub get"
+            - "flutter analyze"
+            - "flutter test"
+            
+        - name: "Build Android"
+          steps:
+            - "flutter build apk --release"
+            
+        - name: "Build iOS"
+          steps:
+            - "flutter build ios --release --no-codesign"
+            
+    ml_training_ci:
+      triggers: ["push to ml_training/"]
+      jobs:
+        - name: "Lint & Test"
+          steps:
+            - "pip install -r requirements.txt"
+            - "pylint src/"
+            - "pytest tests/"
+            
+    backend_ci:
+      triggers: ["push to backend/"]
+      jobs:
+        - name: "Test & Build"
+          steps:
+            - "pip install -r requirements.txt"
+            - "pytest tests/"
+            - "docker build -t aegis-backend ."
+            
+  artifact_storage:
+    - name: "GitHub Releases"
+      cost: "$0"
+      usage: "Store APK/IPA builds"
+      
+    - name: "Hugging Face Hub"
+      cost: "$0"
+      usage: "Store trained models"
+
+# ============================================================================
+# IMPLEMENTATION TIMELINE
+# ============================================================================
+implementation_timeline:
+  
+  total_duration: "14 weeks"
+  
+  phases:
+    - phase: 1
+      name: "Environment Setup & Foundation"
+      duration: "2 weeks"
+      tasks:
+        - task: "Set up Flutter project with RunAnywhere SDK"
+          days: 3
+        - task: "Configure Android & iOS projects"
+          days: 2
+        - task: "Set up ML training environment (Colab/Kaggle)"
+          days: 2
+        - task: "Design and implement base UI"
+          days: 4
+        - task: "Set up CI/CD pipeline"
+          days: 3
+      deliverables:
+        - "Working Flutter app skeleton"
+        - "ML training notebooks ready"
+        - "CI/CD pipelines active"
+        
+    - phase: 2
+      name: "Audio Deepfake Detection"
+      duration: "3 weeks"
+      tasks:
+        - task: "Download and preprocess ASVspoof dataset"
+          days: 3
+        - task: "Train audio deepfake detection model"
+          days: 7
+        - task: "Export model to ONNX and quantize"
+          days: 2
+        - task: "Integrate model with RunAnywhere SDK"
+          days: 4
+        - task: "Build audio detection UI"
+          days: 3
+        - task: "Testing and optimization"
+          days: 2
+      deliverables:
+        - "Trained audio deepfake model (ONNX)"
+        - "Working audio detection in app"
+        
+    - phase: 3
+      name: "Video Deepfake Detection"
+      duration: "3 weeks"
+      tasks:
+        - task: "Download and preprocess FaceForensics++ dataset"
+          days: 3
+        - task: "Train video deepfake detection model"
+          days: 8
+        - task: "Export model to ONNX and quantize"
+          days: 2
+        - task: "Integrate MediaPipe for face detection"
+          days: 2
+        - task: "Integrate model with RunAnywhere SDK"
+          days: 3
+        - task: "Build video detection UI"
+          days: 3
+      deliverables:
+        - "Trained video deepfake model (ONNX)"
+        - "Working video detection in app"
+        
+    - phase: 4
+      name: "Agentic AI & Explanations"
+      duration: "2 weeks"
+      tasks:
+        - task: "Integrate LLM (SmolLM2) via RunAnywhere"
+          days: 3
+        - task: "Design explanation prompts"
+          days: 2
+        - task: "Build explanation generation pipeline"
+          days: 3
+        - task: "Integrate TTS for voice alerts"
+          days: 2
+        - task: "Implement voice agent for hands-free use"
+          days: 3
+        - task: "Testing and prompt tuning"
+          days: 2
+      deliverables:
+        - "Working LLM explanations"
+        - "Voice alerts and hands-free mode"
+        
+    - phase: 5
+      name: "Security & Federated Learning"
+      duration: "2 weeks"
+      tasks:
+        - task: "Implement secure storage and encryption"
+          days: 3
+        - task: "Implement biometric authentication"
+          days: 2
+        - task: "Build RBAC system"
+          days: 2
+        - task: "Set up Flower federated learning server"
+          days: 3
+        - task: "Implement client-side federated training"
+          days: 3
+        - task: "Security testing and hardening"
+          days: 2
+      deliverables:
+        - "Secure authentication system"
+        - "Working federated learning sync"
+        
+    - phase: 6
+      name: "Testing & Deployment"
+      duration: "2 weeks"
+      tasks:
+        - task: "Comprehensive testing on multiple devices"
+          days: 4
+        - task: "Performance optimization"
+          days: 3
+        - task: "Battery usage optimization"
+          days: 2
+        - task: "User documentation"
+          days: 2
+        - task: "Final bug fixes"
+          days: 2
+        - task: "Release build and deployment"
+          days: 2
+      deliverables:
+        - "Production-ready APK/IPA"
+        - "User documentation"
+        - "Deployment guide"
+
+# ============================================================================
+# COST BREAKDOWN - PROVING $0 TOTAL
+# ============================================================================
+cost_breakdown:
+  
+  development_costs:
+    ide_and_tools:
+      - item: "VS Code"
+        cost: "$0"
+      - item: "Android Studio"
+        cost: "$0"
+      - item: "Git"
+        cost: "$0"
+      - item: "GitHub (private repos)"
+        cost: "$0"
+      subtotal: "$0"
+      
+    frameworks_and_libraries:
+      - item: "Flutter SDK"
+        cost: "$0"
+      - item: "RunAnywhere SDK"
+        cost: "$0"
+      - item: "PyTorch"
+        cost: "$0"
+      - item: "All npm/pub packages"
+        cost: "$0"
+      subtotal: "$0"
+      
+    training_compute:
+      - item: "Google Colab (free tier)"
+        cost: "$0"
+      - item: "Kaggle (30 GPU hrs/week)"
+        cost: "$0"
+      subtotal: "$0"
+      
+  runtime_costs:
+    cloud_apis:
+      - item: "Speech-to-Text API"
+        cost: "$0 (on-device Whisper)"
+      - item: "LLM API"
+        cost: "$0 (on-device LlamaCPP)"
+      - item: "Any cloud AI service"
+        cost: "$0 (all on-device)"
+      subtotal: "$0"
+      
+    backend_hosting:
+      - item: "Federated learning server"
+        cost: "$0 (Oracle Cloud free tier)"
+      - item: "Database"
+        cost: "$0 (self-hosted PostgreSQL)"
+      subtotal: "$0"
+      
+  distribution_costs:
+    - item: "Google Play Store"
+      cost: "$25 one-time (or free for enterprise/sideload)"
+    - item: "Apple App Store"
+      cost: "$99/year (or free for enterprise distribution)"
+    - item: "Direct APK distribution"
+      cost: "$0"
+    note: "For defense/government use, enterprise distribution is typically free"
+    
+  total:
+    development: "$0"
+    runtime: "$0"
+    maintenance: "$0"
+    distribution: "$0 (enterprise/sideload) or $124 (public stores)"
+    grand_total: "$0 for complete development and operation"
+
+# ============================================================================
+# LICENSES SUMMARY
+# ============================================================================
+licenses_summary:
+  
+  all_components_free: true
+  
+  license_types_used:
+    - license: "Apache 2.0"
+      components: 
+        - "Flutter"
+        - "TensorFlow"
+        - "MediaPipe"
+        - "RunAnywhere SDK"
+        - "Flower"
+      commercial_use: "Yes"
+      
+    - license: "MIT"
+      components: 
+        - "Whisper.cpp"
+        - "llama.cpp"
+        - "Piper TTS"
+        - "Silero VAD"
+        - "FastAPI"
+      commercial_use: "Yes"
+      
+    - license: "BSD"
+      components: 
+        - "Flutter packages"
+        - "PyTorch"
+        - "NumPy"
+      commercial_use: "Yes"
+      
+    - license: "PostgreSQL License"
+      components: 
+        - "PostgreSQL"
+      commercial_use: "Yes"
+      
+  datasets_licensing:
+    note: "Most datasets are free for research. For commercial deployment:"
+    recommendations:
+      - "Use ASVspoof (free for research) - contact organizers for commercial"
+      - "Use FaceForensics++ (free for research)"
+      - "Create own dataset from public domain sources"
+      - "Partner with government for official dataset"
+
+# ============================================================================
+# QUICK START COMMANDS
+# ============================================================================
+quick_start:
+  
+  flutter_app:
+    setup:
+      - "git clone <repo_url>"
+      - "cd aegis_ai"
+      - "flutter pub get"
+      - "flutter run"
+      
+  ml_training:
+    setup:
+      - "cd ml_training"
+      - "pip install -r requirements.txt"
+      - "python scripts/download_datasets.py"
+      - "python -m src.training.trainer --config configs/audio_config.yaml"
+      
+  backend:
+    setup:
+      - "cd backend"
+      - "docker-compose up -d"
+      - "# Backend available at http://localhost:8000"
+      
+  federated_server:
+    setup:
+      - "cd backend/flower_server"
+      - "python server.py --num-rounds 10"
+
+# ============================================================================
+# MINIMUM DEVICE REQUIREMENTS
+# ============================================================================
+device_requirements:
+  
+  android:
+    min_sdk: "API 24 (Android 7.0)"
+    recommended_sdk: "API 28+ (Android 9.0+)"
+    min_ram: "3GB"
+    recommended_ram: "4GB+"
+    storage: "1GB free space"
+    cpu: "ARM64 (64-bit)"
+    
+  ios:
+    min_version: "iOS 15.0"
+    recommended_version: "iOS 17.0+"
+    min_ram: "3GB"
+    recommended_ram: "4GB+"
+    storage: "1GB free space"
+    devices: "iPhone 8 and newer"
+
+# ============================================================================
+# MODEL SIZES SUMMARY
+# ============================================================================
+model_sizes:
+  
+  required_models:
+    - model: "AegisAudioNet (INT8)"
+      size: "~4MB"
+      purpose: "Audio deepfake detection"
+      
+    - model: "AegisVideoNet (INT8)"
+      size: "~7MB"
+      purpose: "Video deepfake detection"
+      
+    - model: "Whisper Tiny"
+      size: "~75MB"
+      purpose: "Speech-to-text"
+      
+    - model: "SmolLM2-360M (Q4)"
+      size: "~200MB"
+      purpose: "LLM explanations"
+      
+    - model: "Silero VAD"
+      size: "~2MB"
+      purpose: "Voice activity detection"
+      
+    - model: "Piper TTS"
+      size: "~65MB"
+      purpose: "Text-to-speech alerts"
+      
+  total_storage: "~350MB minimum"
+  with_larger_llm: "~600MB with Llama-3.2-1B"
+
+# ============================================================================
+# END OF TECHNICAL IMPLEMENTATION SPECIFICATION
+# ============================================================================
